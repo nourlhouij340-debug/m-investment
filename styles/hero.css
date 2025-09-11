@@ -44,7 +44,9 @@
 }
 
 /* Tighter section spacing for hero under the sticky navbar */
-.section-hero { padding-top: 18px; padding-bottom: 52px; }
+.section-hero { padding-top: 8px; padding-bottom: 40px; }
+.section-hero .brand-italic { margin-right: 6px; }
+.section-hero .hero-rest { display: inline-block; }
 
 .hero-bg {
   position: absolute;
@@ -86,6 +88,26 @@
 .btn-spotlight {
   position: relative;
   background: radial-gradient(240px 140px at var(--mx, 50%) var(--my, 50%), rgba(255,255,255,.22), transparent 60%) , #A67C2D;
+}
+
+/* Better heading line breaks for comprehension */
+.text-balance { text-wrap: balance; }
+.brand-italic { font-family: var(--font-playfair), serif; font-style: italic; font-weight: 600; }
+.hero-rest { font-size: clamp(24px, 3.4vw, 36px); font-weight: 400; }
+.force-two-lines { max-width: 880px; }
+
+/* Animated golden lines background */
+.hero-lines { position:absolute; inset:0; pointer-events:none; opacity:.5; }
+.hero-lines path { fill: none; stroke: #A67C2D; stroke-width: 2.6; stroke-linecap: round; transform-box: fill-box; transform-origin: center; }
+@keyframes sway1 { 0% { transform: translate3d(0,0,0); } 50% { transform: translate3d(0,12px,0); } 100% { transform: translate3d(0,0,0); } }
+@keyframes sway2 { 0% { transform: translate3d(0,0,0); } 50% { transform: translate3d(0,-14px,0); } 100% { transform: translate3d(0,0,0); } }
+@keyframes sway3 { 0% { transform: translate3d(0,0,0); } 50% { transform: translate3d(0,10px,0); } 100% { transform: translate3d(0,0,0); } }
+.hero-lines .l1 { animation: sway1 14s ease-in-out infinite; opacity:.3 }
+.hero-lines .l2 { animation: sway2 18s ease-in-out infinite; opacity:.26 }
+.hero-lines .l3 { animation: sway3 20s ease-in-out infinite; opacity:.28 }
+.hero-lines .ltop { animation: sway1 16s ease-in-out infinite; opacity:.35 }
+@media (prefers-reduced-motion: reduce) {
+  .hero-lines .l1, .hero-lines .l2, .hero-lines .l3 { animation: none; }
 }
 
 .whatsapp-fab { position: fixed; right: 24px; bottom: 24px; z-index: 60; box-shadow: 0 10px 30px rgba(0,0,0,.12); border-radius:9999px; background:#25D366; color:#fff; padding: 10px 16px; display:flex; align-items:center; gap:8px; }

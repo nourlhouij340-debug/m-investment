@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { Playfair_Display } from "next/font/google";
+const playfair = Playfair_Display({ subsets: ["latin"], weight: ["400","600","700"], style: ["italic","normal"], variable: "--font-playfair" });
 import Navbar from "@/components/Navbar";
 import SectionTitle from "@/components/SectionTitle";
 import ServiceCard from "@/components/ServiceCard";
@@ -17,13 +19,23 @@ export default function Home() {
             <svg className="bird b2" width="28" height="12" viewBox="0 0 28 12"><path d="M1 11 C5 4, 9 4, 14 11 M14 11 C19 4, 23 4, 27 11"/></svg>
             <svg className="bird b3" width="32" height="14" viewBox="0 0 32 14"><path d="M1 13 C6 5, 11 5, 16 13 M16 13 C21 5, 26 5, 31 13"/></svg>
           </div>
-          <div className="mx-auto max-w-6xl px-4 grid md:grid-cols-2 gap-5 md:gap-6 items-center">
-            <div>
-              <h1 className="text-[clamp(28px,4.1vw,44px)] font-semibold leading-[1.16] text-[color:var(--black)]">M-Investment – L’excellence au service de votre patrimoine au Maroc</h1>
-              <p className="mt-2 text-[clamp(15px,1.6vw,17px)] text-[color:rgba(15,15,15,.72)] max-w-[660px]">Sécuriser et simplifier votre investissement au Maroc. Accompagnement discret et expert pour MRE et investisseurs internationaux.</p>
+          <svg className="hero-lines" viewBox="0 0 1440 600" aria-hidden="true">
+            <path className="l1" d="M-20 120 C 180 160, 340 100, 520 140 C 700 180, 900 120, 1120 150 C 1260 170, 1460 140, 1480 150" />
+            <path className="l2" d="M-20 260 C 160 240, 360 300, 560 260 C 760 220, 980 280, 1200 240 C 1320 220, 1460 260, 1480 260" />
+            <path className="l3" d="M-20 420 C 140 400, 360 460, 620 420 C 860 380, 1160 460, 1480 420" />
+          </svg>
+          <div className="mx-auto max-w-6xl px-4 grid md:grid-cols-2 gap-4 md:gap-5 items-start md:items-center">
+            <div className="justify-self-start md:pr-6">
+              <h1 className="text-balance text-[clamp(26px,3.6vw,38px)] font-medium leading-[1.15] text-[color:var(--black)]">
+                <span className="brand-italic whitespace-nowrap">M-Investment&nbsp;–</span>{" "}
+                <span>L’excellence au service de votre</span>
+                <br className="hidden md:block" />
+                <span>patrimoine au <strong>Maroc</strong></span>
+              </h1>
+              <p className="mt-3 text-[clamp(15px,1.4vw,16px)] text-[color:rgba(15,15,15,.72)] max-w-[640px] leading-[1.7]">Sécuriser et simplifier votre investissement au Maroc. Accompagnement discret et expert pour MRE et investisseurs internationaux.</p>
               <HeroCtas />
             </div>
-            <div className="justify-self-stretch md:justify-self-end w-full h-[420px] sm:h-[520px] md:h-[600px] lg:h-[680px] relative">
+            <div className="justify-self-stretch md:justify-self-end w-full h-[340px] sm:h-[420px] md:h-[480px] lg:h-[520px] relative -mt-2 md:-mt-4 md:translate-x-1 lg:translate-x-3">
               <Image src="/assets/icons/houses.png" alt="Illustration investissement immobilier" fill sizes="(min-width: 768px) 50vw, 90vw" className="object-contain" priority />
             </div>
           </div>

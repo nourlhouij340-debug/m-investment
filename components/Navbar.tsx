@@ -10,7 +10,6 @@ const items = [
   { label: "Nos Services", href: "#services" },
   { label: "Zones d'intervention", href: "#zones" },
   { label: "Pourquoi nous choisir", href: "#why" },
-  { label: "Contact", href: "#contact" },
 ];
 
 export default function Navbar() {
@@ -31,11 +30,11 @@ export default function Navbar() {
   };
 
   return (
-    <header className={`sticky top-0 z-50 pt-2 pb-0 ${scrolled ? "bg-[color:var(--cream)]/70 backdrop-blur" : "bg-transparent"}`}>
+    <header className={`sticky top-0 z-50 pt-1 pb-0 ${scrolled ? "bg-[color:var(--cream)]/70 backdrop-blur" : "bg-transparent"}`}>
       <nav className="mx-auto max-w-6xl px-4 h-16 grid grid-cols-[auto_1fr_auto] items-center" aria-label="Navigation principale">
         <div className="flex items-center gap-4">
           <a href="#hero" onClick={(e) => handle(e, "#hero")} className="flex items-center gap-2">
-            <Image src="/assets/icons/logo.png" alt="M-Investment" width={56} height={56} />
+            <Image src="/assets/icons/logotouse.png" alt="M-Investment" width={52} height={52} />
           </a>
         </div>
         <ul className="hidden md:flex items-center justify-center gap-5 text-[0.95rem]">
