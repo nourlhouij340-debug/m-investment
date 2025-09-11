@@ -1,0 +1,128 @@
+/* Hero gradient, waves and particles */
+
+:root {
+  --hero-h1: clamp(30px, 5.2vw, 56px);
+  --hero-sub: clamp(15px, 2vw, 18px);
+}
+
+.nav-pill {
+  position: fixed;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1200px, calc(100% - 24px));
+  padding: 16px 28px;
+  background: rgba(255,255,255,0.65);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-radius: 9999px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+  border: 1px solid rgba(0,0,0,.06);
+  z-index: 50;
+}
+
+@media (max-width: 640px) {
+  .nav-pill { background: rgba(255,255,255,0.9); }
+}
+
+.nav-pill.scrolled {
+  background: rgba(255,255,255,0.9);
+  border-color: rgba(0,0,0,.06);
+  -webkit-backdrop-filter: blur(12px) saturate(1.2);
+  backdrop-filter: blur(12px) saturate(1.2);
+}
+
+.hero {
+  position: relative;
+  min-height: min(92vh, 980px);
+  height: 90vh;
+  min-height: 620px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Tighter section spacing for hero under the sticky navbar */
+.section-hero { padding-top: 64px; padding-bottom: 56px; }
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(900px 500px at 15% 12%, rgba(201,164,73,.07), transparent 55%),
+              radial-gradient(900px 500px at 85% 18%, rgba(15,15,15,.03), transparent 55%),
+              linear-gradient(180deg, rgba(201,164,73,0.05) 0%, var(--cream) 70%);
+}
+
+.hero-overlay { position:absolute; inset:0; background: linear-gradient(to bottom, rgba(255,255,255,.18), rgba(255,255,255,.35)); }
+
+.hero-waves { position:absolute; inset:0; }
+.hero-waves path:nth-child(1){ stroke: rgba(201,164,73,.25); }
+.hero-waves path:nth-child(2){ stroke: rgba(15,15,15,.08); }
+.hero-waves path:nth-child(3){ stroke: rgba(201,164,73,.15); }
+
+.hero-particles { position:absolute; inset:0; pointer-events:none; }
+.hero-particles .dot { position:absolute; width:3px; height:3px; background:rgba(15,15,15,.06); border-radius:50%; }
+
+.hero-content { position:relative; text-align:center; padding: 0 16px; }
+.hero-title { font-size: var(--hero-h1); font-weight: 800; line-height: 1.05; color: var(--black); }
+.hero-sub { font-size: var(--hero-sub); color: rgba(15,15,15,.72); max-width: 720px; margin: 12px auto 24px; }
+
+.btn-primary { background: #A67C2D; color:#fff; padding: 12px 24px; border-radius:9999px; transition: opacity .2s ease; }
+.btn-primary:hover { opacity: .92; }
+.btn-primary, .btn-secondary, .nav-cta {
+  transform: translate(var(--tx, 0px), var(--ty, 0px));
+  transition: transform 160ms ease, opacity 160ms ease, background-color 160ms ease, color 160ms ease;
+}
+.btn-secondary { border: 1.5px solid var(--gold); color: rgba(15,15,15,.85); padding: 12px 24px; border-radius:9999px; background: transparent; transition: background-color .2s ease, color .2s ease; }
+.btn-secondary:hover { background: rgba(201,164,73,.06); }
+
+/* Interactive link underline animation */
+.nav-link::after { content: ""; position: absolute; left: 0; bottom: -6px; height: 2px; width: 0; background: var(--gold); transition: width .22s ease; }
+.nav-link:hover::after { width: 100%; }
+.nav-link.active::after { width: 100%; }
+
+/* Spotlight hover for buttons */
+.btn-spotlight {
+  position: relative;
+  background: radial-gradient(240px 140px at var(--mx, 50%) var(--my, 50%), rgba(255,255,255,.22), transparent 60%) , #A67C2D;
+}
+
+.whatsapp-fab { position: fixed; right: 24px; bottom: 24px; z-index: 60; box-shadow: 0 10px 30px rgba(0,0,0,.12); border-radius:9999px; background:#25D366; color:#fff; padding: 10px 16px; display:flex; align-items:center; gap:8px; }
+.whatsapp-fab img { width:20px; height:20px }
+@media (max-width: 420px) { .whatsapp-fab span { display:none } }
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-bg { animation: fadeIn 800ms ease-out both; }
+  .hero-title { animation: fadeUp 700ms ease-out both; }
+  .hero-sub { animation: fadeUp 780ms ease-out both; }
+  .hero-ctas { animation: fadeUp 860ms ease-out both; }
+}
+
+/* Navbar link styles */
+.nav-link { color: rgba(15,15,15,.8); font-weight: 500; text-underline-offset: 4px; }
+.nav-link { position: relative; }
+.nav-link:hover { color: var(--black); }
+.nav-link::after { content: ""; position: absolute; left: 0; bottom: -6px; height: 2px; width: 0; background: var(--gold); transition: width .22s ease; }
+.nav-link:hover::after { width: 100%; }
+.nav-link.active { color: var(--black); }
+.nav-link.active::after { width: 100%; }
+
+/* Nav container shell */
+.nav-shell { background: rgba(255,255,255,0.9); border: 1px solid rgba(0,0,0,.06); border-radius: 14px; box-shadow: 0 8px 24px rgba(0,0,0,.06); }
+
+/* Minimal bird animation (very lightweight) */
+.hero-birds { position:absolute; inset:0; pointer-events:none; overflow:hidden; }
+.bird { position:absolute; opacity:.18; fill:none; stroke: rgba(15,15,15,.25); stroke-width:2; }
+@keyframes fly {
+  0%   { transform: translateX(-10%) translateY(0) }
+  50%  { transform: translateX(45vw) translateY(-12px) }
+  100% { transform: translateX(100vw) translateY(0) }
+}
+.bird.b1 { top:18%; left:-10%; animation: fly 18s linear infinite; }
+.bird.b2 { top:32%; left:-15%; animation: fly 24s linear infinite; transform-origin: center; }
+.bird.b3 { top:58%; left:-12%; animation: fly 28s linear infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .bird { animation: none; }
+}
+
