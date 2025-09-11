@@ -44,7 +44,7 @@
 }
 
 /* Tighter section spacing for hero under the sticky navbar */
-.section-hero { padding-top: 64px; padding-bottom: 56px; }
+.section-hero { padding-top: 18px; padding-bottom: 52px; }
 
 .hero-bg {
   position: absolute;

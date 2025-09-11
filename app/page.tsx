@@ -17,13 +17,13 @@ export default function Home() {
             <svg className="bird b2" width="28" height="12" viewBox="0 0 28 12"><path d="M1 11 C5 4, 9 4, 14 11 M14 11 C19 4, 23 4, 27 11"/></svg>
             <svg className="bird b3" width="32" height="14" viewBox="0 0 32 14"><path d="M1 13 C6 5, 11 5, 16 13 M16 13 C21 5, 26 5, 31 13"/></svg>
           </div>
-          <div className="mx-auto max-w-6xl px-4 grid md:grid-cols-2 gap-8 md:gap-8 items-center">
+          <div className="mx-auto max-w-6xl px-4 grid md:grid-cols-2 gap-5 md:gap-6 items-center">
             <div>
-              <h1 className="text-[clamp(28px,4.2vw,46px)] font-semibold leading-[1.18] text-[color:var(--black)]">M-Investment – L’excellence au service de votre patrimoine au Maroc</h1>
-              <p className="mt-3 text-[clamp(15px,1.7vw,17px)] text-[color:rgba(15,15,15,.72)] max-w-[680px]">Sécuriser et simplifier votre investissement au Maroc. Accompagnement discret et expert pour MRE et investisseurs internationaux.</p>
+              <h1 className="text-[clamp(28px,4.1vw,44px)] font-semibold leading-[1.16] text-[color:var(--black)]">M-Investment – L’excellence au service de votre patrimoine au Maroc</h1>
+              <p className="mt-2 text-[clamp(15px,1.6vw,17px)] text-[color:rgba(15,15,15,.72)] max-w-[660px]">Sécuriser et simplifier votre investissement au Maroc. Accompagnement discret et expert pour MRE et investisseurs internationaux.</p>
               <HeroCtas />
             </div>
-            <div className="justify-self-stretch md:justify-self-end w-full h-[440px] sm:h-[540px] md:h-[640px] lg:h-[720px] relative">
+            <div className="justify-self-stretch md:justify-self-end w-full h-[420px] sm:h-[520px] md:h-[600px] lg:h-[680px] relative">
               <Image src="/assets/icons/houses.png" alt="Illustration investissement immobilier" fill sizes="(min-width: 768px) 50vw, 90vw" className="object-contain" priority />
             </div>
           </div>
