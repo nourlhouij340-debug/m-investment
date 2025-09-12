@@ -30,7 +30,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className={`sticky top-0 z-50 pt-1 pb-0 ${scrolled ? "bg-[color:var(--cream)]/70 backdrop-blur" : "bg-transparent"}`}>
+    <header className={`sticky top-0 z-50 pt-0 pb-0 ${scrolled ? "bg-[color:var(--cream)]/85 backdrop-blur" : "bg-transparent"}`}>
       <nav className="mx-auto max-w-6xl px-4 h-16 grid grid-cols-[auto_1fr_auto] items-center" aria-label="Navigation principale">
         <div className="flex items-center gap-4">
           <a href="#hero" onClick={(e) => handle(e, "#hero")} className="flex items-center gap-2">
@@ -43,7 +43,7 @@ export default function Navbar() {
               <a
                 href={i.href}
                 onClick={(e) => handle(e, i.href)}
-                className={`nav-link ${active && `#${active}` === i.href ? "active" : ""}`}
+                className={`nav-link ${scrolled ? "nav-link-dark" : "nav-link-light"} ${active && `#${active}` === i.href ? "active" : ""}`}
               >
                 {i.label}
               </a>

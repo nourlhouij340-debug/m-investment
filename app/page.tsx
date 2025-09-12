@@ -13,66 +13,61 @@ export default function Home() {
       <Navbar />
       <main>
         {/* Hero (clean, cream, left text, right image) */}
-        <section id="hero" className="section-hero bg-[color:var(--cream)] relative">
-          <div className="hero-birds" aria-hidden="true">
-            <svg className="bird b1" width="36" height="16" viewBox="0 0 36 16"><path d="M1 15 C6 6, 12 6, 18 15 M18 15 C24 6, 30 6, 35 15"/></svg>
-            <svg className="bird b2" width="28" height="12" viewBox="0 0 28 12"><path d="M1 11 C5 4, 9 4, 14 11 M14 11 C19 4, 23 4, 27 11"/></svg>
-            <svg className="bird b3" width="32" height="14" viewBox="0 0 32 14"><path d="M1 13 C6 5, 11 5, 16 13 M16 13 C21 5, 26 5, 31 13"/></svg>
-          </div>
-          <svg className="hero-lines" viewBox="0 0 1440 600" aria-hidden="true">
-            <path className="l1" d="M-20 120 C 180 160, 340 100, 520 140 C 700 180, 900 120, 1120 150 C 1260 170, 1460 140, 1480 150" />
-            <path className="l2" d="M-20 260 C 160 240, 360 300, 560 260 C 760 220, 980 280, 1200 240 C 1320 220, 1460 260, 1480 260" />
-            <path className="l3" d="M-20 420 C 140 400, 360 460, 620 420 C 860 380, 1160 460, 1480 420" />
-          </svg>
-          <div className="mx-auto max-w-6xl px-4 grid md:grid-cols-2 gap-4 md:gap-5 items-start md:items-center">
-            <div className="justify-self-start md:pr-6">
-              <h1 className="text-balance text-[clamp(26px,3.6vw,38px)] font-medium leading-[1.15] text-[color:var(--black)]">
-                <span className="brand-italic whitespace-nowrap">M-Investment&nbsp;–</span>{" "}
-                <span>L’excellence au service de votre</span>
-                <br className="hidden md:block" />
-                <span>patrimoine au <strong>Maroc</strong></span>
-              </h1>
-              <p className="mt-3 text-[clamp(15px,1.4vw,16px)] text-[color:rgba(15,15,15,.72)] max-w-[640px] leading-[1.7]">Sécuriser et simplifier votre investissement au Maroc. Accompagnement discret et expert pour MRE et investisseurs internationaux.</p>
-              <HeroCtas />
-            </div>
-            <div className="justify-self-stretch md:justify-self-end w-full h-[340px] sm:h-[420px] md:h-[480px] lg:h-[520px] relative -mt-2 md:-mt-4 md:translate-x-1 lg:translate-x-3">
-              <Image src="/assets/icons/houses.png" alt="Illustration investissement immobilier" fill sizes="(min-width: 768px) 50vw, 90vw" className="object-contain" priority />
+        <section id="hero" className="hero-premium">
+          <Image src="/assets/icons/rabat.jpg" alt="Ville de Rabat" fill className="hero-bg-img" priority sizes="100vw" />
+          <div className="content">
+            <h1 className="text-balance text-[clamp(28px,4vw,44px)] font-medium leading-[1.15]">
+              <span>M-Investment</span>
+              <br />
+              L’excellence au service de votre patrimoine au <strong>Maroc</strong>
+            </h1>
+            <p className="mt-3 text-[clamp(15px,1.4vw,17px)] opacity-90">Sécuriser et simplifier votre investissement au Maroc. Accompagnement discret et expert pour MRE et investisseurs internationaux.</p>
+            <div className="mt-6 flex items-center justify-center gap-4 flex-wrap">
+              <a href="#services" className="btn-primary btn-spotlight nav-cta">Découvrir nos services</a>
+              <a href="#contact" className="btn-secondary nav-cta">Nous contacter</a>
             </div>
           </div>
         </section>
 
         {/* Intro */}
-        <section id="intro" className="section bg-[color:var(--cream)]">
-          <div className="mx-auto max-w-4xl px-4 text-center">
-            <p className="text-[color:var(--black)] text-lg fade-up">
-              Notre mission: sécuriser vos projets et simplifier chaque étape administrative et juridique, pour investir au Maroc avec sérénité et efficacité.
-            </p>
+        <section id="intro" className="section-mission bg-[color:var(--cream)]">
+          <div className="mx-auto max-w-6xl px-4 mission-wrap">
+            <div className="relative z-[1] grid md:grid-cols-2 items-center gap-8">
+              <div className="flex items-center justify-center">
+                <Image src="/assets/icons/full-logo.png" alt="M-Investment" width={520} height={260} className="mission-logo" />
+              </div>
+              <div>
+                <h2 className="text-[color:var(--black)] font-semibold text-2xl mb-3">Notre mission</h2>
+                <p className="text-[color:var(--black)] text-lg leading-relaxed">
+                  Sécuriser et simplifier vos projets et chaque étape administrative et juridique, pour investir au Maroc avec sérénité et efficacité.
+                </p>
+              </div>
+            </div>
+            <div className="mission-glow" aria-hidden="true" />
           </div>
         </section>
 
         {/* Services */}
         <section id="services" className="section">
           <div className="mx-auto max-w-6xl px-4">
-            <SectionTitle title="Services" subtitle="Accompagnement immobilier Maroc, sécurisation juridique, et gestion post-achat." />
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              <ServiceCard
-                title="Conseil & accompagnement immobilier"
-                icon="/assets/icons/compass.svg"
-                bullets={["Étude besoins/budget", "Sélection de biens vérifiés (titres, conformité)", "Assistance négociation/transaction"]}
-              />
-              <ServiceCard
-                title="Sécurisation juridique & administrative"
-                icon="/assets/icons/shield.svg"
-                bullets={["Vérifs titres & contrats", "Coordination notaires/avocats/administrations", "Enregistrement & financement"]}
-              />
-              <ServiceCard
-                title="Gestion post-achat & installation"
-                icon="/assets/icons/home.svg"
-                bullets={["Location/gestion, conciergerie/entretien", "Carte de séjour, scolarité, banque, santé", "Réseau de prestataires fiables"]}
-              />
-            </div>
-            <div className="mt-8">
-              <a href="#contact" className="inline-block rounded-lg bg-[color:var(--gold)] text-white text-sm font-medium py-2 px-4 hover:opacity-90">Parler à un conseiller</a>
+            <div className="eyebrow">Nos métiers</div>
+            <h2 className="mb-6">Accompagnement complet</h2>
+            <div className="grid gap-6 md:grid-cols-3">
+              <div className="card">
+                <h3 className="font-semibold mb-2">Investment Management</h3>
+                <p className="prose">Conseil stratégique, structuration et pilotage de l’investissement immobilier pour maximiser la valeur.</p>
+                <a href="#contact" className="link mt-3 inline-block">Accélérer la croissance</a>
+              </div>
+              <div className="card">
+                <h3 className="font-semibold mb-2">Property Development</h3>
+                <p className="prose">Développement et transformation d’actifs avec une approche rigoureuse et responsable.</p>
+                <a href="#contact" className="link mt-3 inline-block">Façonner la ville</a>
+              </div>
+              <div className="card">
+                <h3 className="font-semibold mb-2">Hospitality & Installation</h3>
+                <p className="prose">Expériences et services post‑achat: installation, gestion, conciergerie, conformité.</p>
+                <a href="#contact" className="link mt-3 inline-block">Sublimer l’expérience</a>
+              </div>
             </div>
           </div>
         </section>
@@ -80,19 +75,20 @@ export default function Home() {
         {/* Why */}
         <section id="why" className="section bg-white">
           <div className="mx-auto max-w-6xl px-4">
-            <SectionTitle title="Pourquoi nous choisir" />
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 text-[color:var(--black)]">
-              <div className="rounded-[16px] bg-[color:var(--cream)] p-6">
-                <h3 className="font-semibold mb-2">Expertise locale & réseau fiable</h3>
-                <p className="text-[color:var(--gray600)]">Notaires, promoteurs, banques, architectes.</p>
+            <div className="eyebrow">Pourquoi nous choisir</div>
+            <h2 className="mb-6">Notre différence</h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="card">
+                <h3 className="font-semibold mb-2">Expertise locale & réseau</h3>
+                <p className="prose">Réseau éprouvé de notaires, avocats, banquiers, architectes et promoteurs pour sécuriser chaque étape.</p>
               </div>
-              <div className="rounded-[16px] bg-[color:var(--cream)] p-6">
-                <h3 className="font-semibold mb-2">Transparence & accompagnement sur-mesure</h3>
-                <p className="text-[color:var(--gray600)]">Suivi clair, intérêts alignés, confidentialité.</p>
+              <div className="card">
+                <h3 className="font-semibold mb-2">Transparence & gouvernance</h3>
+                <p className="prose">Processus clairs, reporting structuré et alignement d’intérêts pour des décisions sereines.</p>
               </div>
-              <div className="rounded-[16px] bg-[color:var(--cream)] p-6">
-                <h3 className="font-semibold mb-2">Équipe FR / EN / AR</h3>
-                <p className="text-[color:var(--gray600)]">Communication fluide, internationale.</p>
+              <div className="card">
+                <h3 className="font-semibold mb-2">Exécution multi‑langues</h3>
+                <p className="prose">Équipe FR / EN / AR au service des MRE et investisseurs internationaux.</p>
               </div>
             </div>
           </div>
@@ -101,7 +97,8 @@ export default function Home() {
         {/* Zones */}
         <section id="zones" className="section">
           <div className="mx-auto max-w-6xl px-4">
-            <SectionTitle title="Zones d’intervention" />
+            <div className="eyebrow">Zones d’intervention</div>
+            <h2 className="mb-6">Où nous opérons</h2>
             <div className="flex flex-wrap gap-2">
               {["Casablanca", "Rabat", "Marrakech", "Tanger", "Agadir", "Zones touristiques & résidentielles"].map((z) => (
                 <span key={z} className="rounded-full bg-white shadow px-4 py-2 text-sm text-[color:var(--black)]">{z}</span>
@@ -129,7 +126,7 @@ export default function Home() {
         <section id="cta" className="section bg-[color:var(--cream)]">
           <div className="mx-auto max-w-6xl px-4 grid gap-4 md:flex md:items-center md:justify-between">
             <p className="text-[color:var(--black)] text-lg">Nous traitons chaque projet avec rigueur et confidentialité. Parlons de votre situation et objectifs.</p>
-            <a href="#contact" className="rounded-lg bg-[color:var(--gold)] text-white text-sm font-medium py-2 px-4 hover:opacity-90">Discuter de votre projet</a>
+            <a href="#contact" className="btn btn--primary">Discuter de votre projet</a>
           </div>
         </section>
 

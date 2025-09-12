@@ -110,6 +110,35 @@
   .hero-lines .l1, .hero-lines .l2, .hero-lines .l3 { animation: none; }
 }
 
+/* Premium photo hero (full-bleed under navbar) */
+.hero-premium {
+  position: relative;
+  margin-top: -64px; /* tuck under navbar, remove white gap */
+  min-height: 82vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 80px 16px 56px;
+  color: #fff;
+}
+.hero-premium::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: rgba(0, 0, 0, 0.563);
+  z-index: 1;
+}
+.hero-premium .hero-bg-img { position:absolute; top:0; left:0; right:0; bottom:0; width:100%; height:100%; object-fit: cover; object-position: center center; z-index: 0; filter: saturate(1.05) contrast(1.05); }
+.hero-premium .content { position: relative; z-index: 2; max-width: 900px; }
+.hero-premium .btn-secondary { border-color: rgba(255,255,255,.85); color: #fff; }
+.hero-premium .btn-secondary:hover { background: rgba(255,255,255,.12); }
+
+.mission-wrap { position: relative; }
+.mission-glow { position:absolute; inset:-24px; background: radial-gradient(400px 220px at 20% 30%, rgba(201,164,73,.18), transparent 60%), radial-gradient(380px 200px at 80% 70%, rgba(201,164,73,.12), transparent 65%); filter: blur(18px); opacity:.6; z-index:0; pointer-events:none; animation: glowPulse 6s ease-in-out infinite; }
+@keyframes glowPulse { 0% { opacity:.35 } 50% { opacity:.7 } 100% { opacity:.35 } }
+
+.section-mission { padding-top: 24px; padding-bottom: 64px; }
+.mission-logo { max-width: 100%; height: auto; }
+
 .whatsapp-fab { position: fixed; right: 24px; bottom: 24px; z-index: 60; box-shadow: 0 10px 30px rgba(0,0,0,.12); border-radius:9999px; background:#25D366; color:#fff; padding: 10px 16px; display:flex; align-items:center; gap:8px; }
 .whatsapp-fab img { width:20px; height:20px }
 @media (max-width: 420px) { .whatsapp-fab span { display:none } }
@@ -122,16 +151,16 @@
 }
 
 /* Navbar link styles */
-.nav-link { color: rgba(15,15,15,.8); font-weight: 500; text-underline-offset: 4px; }
-.nav-link { position: relative; }
-.nav-link:hover { color: var(--black); }
+.nav-link { position: relative; font-weight: 500; text-underline-offset: 4px; transition: color .2s ease; }
+.nav-link-light { color: rgba(255,255,255,.95); }
+.nav-link-light:hover, .nav-link-light.active { color: #fff; }
+.nav-link-dark { color: rgba(15,15,15,.85); }
+.nav-link-dark:hover, .nav-link-dark.active { color: var(--black); }
 .nav-link::after { content: ""; position: absolute; left: 0; bottom: -6px; height: 2px; width: 0; background: var(--gold); transition: width .22s ease; }
-.nav-link:hover::after { width: 100%; }
-.nav-link.active { color: var(--black); }
-.nav-link.active::after { width: 100%; }
+.nav-link:hover::after, .nav-link.active::after { width: 100%; }
 
 /* Nav container shell */
-.nav-shell { background: rgba(255,255,255,0.9); border: 1px solid rgba(0,0,0,.06); border-radius: 14px; box-shadow: 0 8px 24px rgba(0,0,0,.06); }
+.nav-shell { background: rgba(255,255,255,0.0); border: 1px solid rgba(255,255,255,0.0); border-radius: 14px; box-shadow: none; }
 
 /* Minimal bird animation (very lightweight) */
 .hero-birds { position:absolute; inset:0; pointer-events:none; overflow:hidden; }
