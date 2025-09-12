@@ -29,7 +29,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-poppins);
+  --font-sans: var(--font-inter);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -47,11 +47,11 @@ html { scroll-behavior: smooth; }
 body {
   background: var(--cream);
   color: var(--black);
-  font-family: var(--font-poppins), system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-family: var(--font-inter), system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   font-size: var(--body-size);
 }
 
-h1, h2, h3, h4 { font-family: var(--font-poppins), system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+h1, h2, h3, h4 { font-family: var(--font-cormorant), serif; font-weight: 600; letter-spacing: .02em; }
 
 h1 { font-size: var(--h1-size); line-height: 1.1; }
 h2 { font-size: var(--h2-size); line-height: 1.2; }

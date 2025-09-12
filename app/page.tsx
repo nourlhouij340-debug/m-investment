@@ -3,6 +3,7 @@ import { Playfair_Display } from "next/font/google";
 const playfair = Playfair_Display({ subsets: ["latin"], weight: ["400","600","700"], style: ["italic","normal"], variable: "--font-playfair" });
 import Navbar from "@/components/Navbar";
 import SectionTitle from "@/components/SectionTitle";
+import ZoneCard from "@/components/ZoneCard";
 import ServiceCard from "@/components/ServiceCard";
 import ContactForm from "@/components/ContactForm";
 import HeroCtas from "@/components/HeroCtas";
@@ -98,11 +99,17 @@ export default function Home() {
         <section id="zones" className="section">
           <div className="mx-auto max-w-6xl px-4">
             <div className="eyebrow">Zones d’intervention</div>
-            <h2 className="mb-6">Où nous opérons</h2>
-            <div className="flex flex-wrap gap-2">
-              {["Casablanca", "Rabat", "Marrakech", "Tanger", "Agadir", "Zones touristiques & résidentielles"].map((z) => (
-                <span key={z} className="rounded-full bg-white shadow px-4 py-2 text-sm text-[color:var(--black)]">{z}</span>
-              ))}
+            <h2 className="mb-6">Zones populaires que nous couvrons</h2>
+            <div className="zones-grid">
+              {/* Row 1 */}
+              <ZoneCard className="zone-span-3 zone-row-2" title="Casablanca" image="/assets/icons/rabat.jpg" description="Capitale économique; Anfa, Racine, Californie, Ain Diab. Résidentiel premium, bureaux et projets d’investissement." />
+              <ZoneCard className="zone-span-3" title="Rabat" image="/assets/icons/rabat.jpg" description="Souissi, Hay Riad, Les Orangers. Ambassades, institutions, résidences familiales et haut standing." />
+              {/* Row 2 */}
+              <ZoneCard className="zone-span-3" title="Marrakech" image="/assets/icons/rabat.jpg" description="Palmeraie, Hivernage, Médina et axes Ourika / Ouarzazate. Villas, riads et résidences lifestyle." />
+              {/* Row 3 */}
+              <ZoneCard className="zone-span-2" title="Tanger" image="/assets/icons/rabat.jpg" description="Corniche, Marchan, Cap Spartel. Hub logistique et résidentiel en forte croissance." />
+              <ZoneCard className="zone-span-2" title="Agadir" image="/assets/icons/rabat.jpg" description="Plages, resorts et quartiers résidentiels. Opportunités locatives et pied‑à‑terre en bord de mer." />
+              <ZoneCard className="zone-span-2" title="Principales zones touristiques & résidentielles" image="/assets/icons/rabat.jpg" description="Sélection des stations balnéaires et villes à forte attractivité: Essaouira, El Jadida, Saïdia, Bouznika, etc." />
             </div>
           </div>
         </section>
