@@ -47,7 +47,7 @@ export default function QuoteSection() {
         <svg className="qt-svg qt-mid" viewBox="0 0 1200 220" preserveAspectRatio="none">
           <path
             className="quote-thread swirl qt2"
-            d="M 0 140 C 220 180, 360 130, 600 170 C 850 200, 980 120, 1200 160"
+            d="M 0 120 C 220 150, 360 110, 600 140 C 850 160, 980 100, 1200 140"
             stroke="#c9a449"
           />
         </svg>

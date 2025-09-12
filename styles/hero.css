@@ -185,9 +185,9 @@
 .quote-threads { position:absolute; left:50%; transform: translateX(-50%); top:0; width:100vw; height:180px; pointer-events:none; z-index:1; }
 .qt-svg { position:absolute; left:0; right:0; width:100%; height:200px; }
 .qt-svg.qt-top { top:-22px; }
-.qt-svg.qt-mid { top:34px; }
+.qt-svg.qt-mid { top:48px; }
 .qt-svg.qt-low { top:84px; }
-.quote-thread { fill:none; stroke-width:2.4; opacity:.6; filter: drop-shadow(0 0 6px rgba(201,164,73,.16)); }
+.quote-thread { fill:none; stroke-width:1.6; opacity:.25; filter: none; }
 .quote-thread.qt1 { opacity:.55; animation: qtFloatX 16s ease-in-out infinite; transform: translateY(calc(-6px + var(--qscroll,0) * -8px)); }
 .quote-thread.qt2 { opacity:.7;  animation: qtFloat2 18s ease-in-out infinite; transform: translateY(calc(6px + var(--qscroll,0) * 10px)); }
 .quote-thread.qt3 { opacity:.5;  animation: qtFloat3 22s ease-in-out infinite; transform: translateY(calc(10px + var(--qscroll,0) * 6px)); }
@@ -219,10 +219,17 @@
   pointer-events: none;
   z-index: 5;
   opacity: 0;
-  /* Fullscreen radial gradient centered at cursor coordinates */
-  background: radial-gradient(60px 60px at var(--mx, 50%) var(--my, 50%), rgba(201,164,73,0.22), rgba(201,164,73,0.10) 48%, rgba(201,164,73,0.06) 70%, transparent 82%);
+  transition: opacity .15s ease;
+}
+.cursor-shadow .cursor-glow {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  left: calc(var(--mx, 0px) - 60px);
+  top: calc(var(--my, 0px) - 60px);
+  background: radial-gradient(60px 60px at 50% 50%, rgba(201,164,73,0.22), rgba(201,164,73,0.10) 48%, rgba(201,164,73,0.06) 70%, transparent 82%);
   mix-blend-mode: multiply;
-  transition: opacity .25s ease;
+  pointer-events: none;
 }
 @media (prefers-reduced-motion: reduce) {
   .cursor-shadow { display: none; }
