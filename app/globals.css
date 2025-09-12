@@ -6,7 +6,7 @@
   --foreground: #0f0f0f;
 
   /* Brand tokens */
-  --cream: #F7F3EE;
+  --cream: #f2eded;
   --black: #0F0F0F;
   --gold: #C9A449;
   --gray600: #6B7280;
@@ -22,7 +22,7 @@
 
   /* Spacing / radii / shadows */
   --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-6: 24px; --space-8: 32px;
-  --radius-lg: 16px;
+  --radius-lg: 5px;
   --shadow-soft: 0 8px 24px rgba(0,0,0,.08);
 }
 

@@ -31,7 +31,7 @@ export default function Home() {
         </section>
 
         {/* Intro */}
-        <section id="intro" className="section-mission bg-[color:var(--cream)]">
+        <section id="intro" className="section-mission">
           <div className="mx-auto max-w-6xl px-4 mission-wrap">
             <div className="relative z-[1] grid md:grid-cols-2 items-center gap-8">
               <div className="flex items-center justify-center">
@@ -74,7 +74,7 @@ export default function Home() {
         </section>
 
         {/* Why */}
-        <section id="why" className="section bg-white">
+        <section id="why" className="section">
           <div className="mx-auto max-w-6xl px-4">
             <div className="eyebrow">Pourquoi nous choisir</div>
             <h2 className="mb-6">Notre différence</h2>
@@ -115,7 +115,7 @@ export default function Home() {
         </section>
 
         {/* About */}
-        <section id="about" className="section bg-white">
+        <section id="about" className="section">
           <div className="mx-auto max-w-6xl px-4 grid md:grid-cols-[200px_1fr] gap-6 items-start">
             <Image src="/assets/founder.jpg" width={200} height={240} alt="Portrait du fondateur" className="rounded-[16px] object-cover bg-[color:var(--cream)]" />
             <div>
@@ -130,7 +130,7 @@ export default function Home() {
         </section>
 
         {/* CTA */}
-        <section id="cta" className="section bg-[color:var(--cream)]">
+        <section id="cta" className="section">
           <div className="mx-auto max-w-6xl px-4 grid gap-4 md:flex md:items-center md:justify-between">
             <p className="text-[color:var(--black)] text-lg">Nous traitons chaque projet avec rigueur et confidentialité. Parlons de votre situation et objectifs.</p>
             <a href="#contact" className="btn btn--primary">Discuter de votre projet</a>
@@ -138,13 +138,13 @@ export default function Home() {
         </section>
 
         {/* Contact */}
-        <section id="contact" className="section bg-white">
+        <section id="contact" className="section">
           <div className="mx-auto max-w-6xl px-4 grid md:grid-cols-2 gap-8">
             <div>
               <SectionTitle title="Contact" subtitle="Parlons de votre projet en toute confidentialité." />
               <ContactForm />
             </div>
-            <div className="rounded-[16px] bg-[color:var(--cream)] p-6">
+            <div className="rounded-[16px] bg-white p-6">
               <h3 className="font-semibold mb-2">Coordonnées</h3>
               <ul className="text-[color:var(--gray600)]">
                 <li>Email: contact@m-investment.ma</li>
