@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import SectionTitle from "@/components/SectionTitle";
 import ZoneCard from "@/components/ZoneCard";
 import ServiceCard from "@/components/ServiceCard";
+import ServiceTile from "@/components/ServiceTile";
 import ContactForm from "@/components/ContactForm";
 import HeroCtas from "@/components/HeroCtas";
 import QuoteSection from "@/components/QuoteSection";
@@ -39,51 +40,73 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Services */}
+        {/* Services (three-panel image tiles) */}
         <section id="services" className="section">
           <div className="mx-auto max-w-6xl px-4">
             <div className="eyebrow">Nos métiers</div>
             <h2 className="mb-6">Accompagnement complet</h2>
-            <div className="grid gap-6 md:grid-cols-3">
-              <div className="card">
-                <h3 className="font-semibold mb-2">Investment Management</h3>
-                <p className="prose">Conseil stratégique, structuration et pilotage de l’investissement immobilier pour maximiser la valeur.</p>
-                <a href="#contact" className="link mt-3 inline-block">Accélérer la croissance</a>
-              </div>
-              <div className="card">
-                <h3 className="font-semibold mb-2">Property Development</h3>
-                <p className="prose">Développement et transformation d’actifs avec une approche rigoureuse et responsable.</p>
-                <a href="#contact" className="link mt-3 inline-block">Façonner la ville</a>
-              </div>
-              <div className="card">
-                <h3 className="font-semibold mb-2">Hospitality & Installation</h3>
-                <p className="prose">Expériences et services post‑achat: installation, gestion, conciergerie, conformité.</p>
-                <a href="#contact" className="link mt-3 inline-block">Sublimer l’expérience</a>
-              </div>
+            <div className="services-hero">
+              <ServiceTile
+                title="Conseil & accompagnement immobilier"
+                imageUrl="/assets/icons/rabat.jpg"
+                items={[
+                  "Étude de vos besoins et de votre budget",
+                  "Sélection de biens fiables et vérifiés (titres fonciers, conformité juridique)",
+                  "Assistance dans la négociation et la transaction",
+                ]}
+              />
+              <ServiceTile
+                title="Sécurisation juridique & administrative"
+                imageUrl="/assets/icons/rabat.jpg"
+                items={[
+                  "Vérification légale des titres et contrats",
+                  "Coordination avec notaires, avocats et administrations",
+                  "Suivi des procédures d’enregistrement et de financement",
+                ]}
+              />
+              <ServiceTile
+                title="Gestion post-achat & installation"
+                imageUrl="/assets/icons/rabat.jpg"
+                items={[
+                  "Accompagnement pour la location ou la gestion de votre bien",
+                  "Services de conciergerie et d’entretien",
+                  "Assistance pour votre installation (carte de séjour, scolarité, banque, santé)",
+                ]}
+              />
             </div>
           </div>
         </section>
 
-        {/* Why */}
-        <section id="why" className="section">
+        {/* Why (premium) */}
+        <section id="why" className="why-premium section">
           <div className="mx-auto max-w-6xl px-4">
-            <div className="eyebrow">Pourquoi nous choisir</div>
-            <h2 className="mb-6">Notre différence</h2>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="card">
-                <h3 className="font-semibold mb-2">Expertise locale & réseau</h3>
-                <p className="prose">Réseau éprouvé de notaires, avocats, banquiers, architectes et promoteurs pour sécuriser chaque étape.</p>
+            <div className="why-head text-center">
+              <div className="eyebrow">Pourquoi nous choisir</div>
+              <h2 className="mb-2">Un accompagnement premium, discret et fiable</h2>
+              <p className="prose text-[color:var(--gray700)] max-w-3xl mx-auto">Inspiré des meilleures pratiques du conseil immobilier premium, notre approche combine rigueur, réseau local et confidentialité absolue pour sécuriser et valoriser votre investissement.</p>
+            </div>
+            <div className="why-grid">
+              <div className="why-card text-center">
+                <div className="why-icon icon-network" aria-hidden="true" />
+                <h3>Expertise locale & réseau</h3>
+                <p>Partenaires de confiance (notaires, avocats, banques, architectes) et compréhension fine des marchés au Maroc.</p>
               </div>
-              <div className="card">
-                <h3 className="font-semibold mb-2">Transparence & gouvernance</h3>
-                <p className="prose">Processus clairs, reporting structuré et alignement d’intérêts pour des décisions sereines.</p>
+              <div className="why-card text-center">
+                <div className="why-icon icon-compliance" aria-hidden="true" />
+                <h3>Processus clair & conformité</h3>
+                <p>Démarche structurée, vérifications juridiques et administratives, reporting transparent à chaque étape.</p>
               </div>
-              <div className="card">
-                <h3 className="font-semibold mb-2">Exécution multi‑langues</h3>
-                <p className="prose">Équipe FR / EN / AR au service des MRE et investisseurs internationaux.</p>
+              <div className="why-card text-center">
+                <div className="why-icon icon-service" aria-hidden="true" />
+                <h3>Service sur‑mesure & multi‑langues</h3>
+                <p>Interlocuteur unique FR / EN / AR, disponibilité élevée et accompagnement discret, avant et après l’achat.</p>
               </div>
             </div>
+            <div className="why-cta text-center">
+              <a href="#contact" className="btn btn--primary">Parler de votre projet</a>
+            </div>
           </div>
+          <div className="why-glow" aria-hidden="true" />
         </section>
 
         {/* Zones */}
