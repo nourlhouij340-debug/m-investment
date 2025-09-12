@@ -7,6 +7,7 @@ import ZoneCard from "@/components/ZoneCard";
 import ServiceCard from "@/components/ServiceCard";
 import ContactForm from "@/components/ContactForm";
 import HeroCtas from "@/components/HeroCtas";
+import QuoteSection from "@/components/QuoteSection";
 
 export default function Home() {
   return (
@@ -33,17 +34,7 @@ export default function Home() {
         {/* Intro */}
         <section id="intro" className="section-mission">
           <div className="mx-auto max-w-6xl px-4 mission-wrap">
-            <div className="relative z-[1] grid md:grid-cols-2 items-center gap-8">
-              <div className="flex items-center justify-center">
-                <Image src="/assets/icons/full-logo.png" alt="M-Investment" width={520} height={260} className="mission-logo" />
-              </div>
-              <div>
-                <h2 className="text-[color:var(--black)] font-semibold text-2xl mb-3">Notre mission</h2>
-                <p className="text-[color:var(--black)] text-lg leading-relaxed">
-                  Sécuriser et simplifier vos projets et chaque étape administrative et juridique, pour investir au Maroc avec sérénité et efficacité.
-                </p>
-              </div>
-            </div>
+            <QuoteSection />
             <div className="mission-glow" aria-hidden="true" />
           </div>
         </section>
