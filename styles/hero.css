@@ -185,7 +185,7 @@
 .quote-threads { position:absolute; left:50%; transform: translateX(-50%); top:0; width:100vw; height:180px; pointer-events:none; z-index:1; }
 .qt-svg { position:absolute; left:0; right:0; width:100%; height:200px; }
 .qt-svg.qt-top { top:-22px; }
-.qt-svg.qt-mid { top:48px; }
+.qt-svg.qt-mid { top:60px; }
 .qt-svg.qt-low { top:84px; }
 .quote-thread { fill:none; stroke-width:1.6; opacity:.25; filter: none; }
 .quote-thread.qt1 { opacity:.55; animation: qtFloatX 16s ease-in-out infinite; transform: translateY(calc(-6px + var(--qscroll,0) * -8px)); }
