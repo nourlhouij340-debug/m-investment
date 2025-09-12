@@ -128,65 +128,107 @@ export default function Home() {
           </div>
         </section>
 
-        {/* About */}
-        <section id="about" className="section">
-          <div className="mx-auto max-w-6xl px-4 grid md:grid-cols-[200px_1fr] gap-6 items-start">
-            <Image src="/assets/founder.jpg" width={200} height={240} alt="Portrait du fondateur" className="rounded-[16px] object-cover bg-[color:var(--cream)]" />
-            <div>
-              <SectionTitle title="À propos" />
-              <h3 className="font-semibold">El Alami Montasser — Fondateur</h3>
-              <p className="text-[color:var(--gray600)] mt-2 max-w-prose">
-                Expérience bancaire en France (PME / gestion de patrimoine), vision internationale; retour au Maroc pour accompagner MRE & investisseurs étrangers.
-                Valeurs: Transparence, Confiance, Expertise.
-              </p>
+        {/* About (premium, inspired by Bosworth Property) */}
+        <section id="about" className="section about-premium">
+          <div className="mx-auto max-w-6xl px-4 about-rows">
+            {/* Row 1: image left, text right */}
+            <div className="about-row">
+              <div className="about-img">
+                <Image src="/assets/icons/rabat.jpg" alt="Rabat — Maroc" fill className="object-cover rounded-[var(--radius-lg)]" />
+              </div>
+              <div className="about-content">
+                <div className="eyebrow">À propos</div>
+                <h2 className="mb-3">El Alami Montasser — Fondateur de M‑Investment</h2>
+                <p className="prose about-text">
+                  Originaire de Rabat, Montasser a bâti en France une solide expérience bancaire (affaires professionnelles, conseil patrimonial). Double culture France/Maroc, vision internationale et parfaite connaissance du terrain local.
+                </p>
+                <h3 className="about-sub">Expertises clés</h3>
+                <ul className="about-list">
+                  <li>Conseil patrimonial</li>
+                  <li>Accompagnement des professionnels et entrepreneurs</li>
+                  <li>Structuration de projets d’investissement sécurisés</li>
+                  <li>Stratégies financières et immobilières adaptées</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Row 2: text left, image right */}
+            <div className="about-row about-row--reverse">
+              <div className="about-content">
+                <h3 className="about-sub">Aujourd’hui, il accompagne ses clients dans</h3>
+                <ul className="about-list">
+                  <li>La sécurisation des investissements immobiliers au Maroc</li>
+                  <li>L’installation et la relocalisation sereine</li>
+                  <li>Le développement de solutions patrimoniales durables</li>
+                </ul>
+                <p className="prose about-text mt-2">
+                  Son credo: transparence, confiance et expertise pour des projets pérennes dans un Maroc en forte croissance.
+                </p>
+              </div>
+              <div className="about-img">
+                <Image src="/assets/icons/rabat.jpg" alt="Architecture — Maroc" fill className="object-cover rounded-[var(--radius-lg)]" />
+              </div>
             </div>
           </div>
         </section>
 
-        {/* CTA */}
-        <section id="cta" className="section">
-          <div className="mx-auto max-w-6xl px-4 grid gap-4 md:flex md:items-center md:justify-between">
-            <p className="text-[color:var(--black)] text-lg">Nous traitons chaque projet avec rigueur et confidentialité. Parlons de votre situation et objectifs.</p>
-            <a href="#contact" className="btn btn--primary">Discuter de votre projet</a>
+        {/* CTA – full-bleed scrollable image with white ghost arrow */}
+        <section id="cta" className="cta-hero">
+          <div className="cta-inner">
+            <h2 className="cta-title">Contactez‑nous pour en savoir plus !</h2>
+            <p className="cta-sub">Besoin d’infos sur nos services ? Notre équipe est là pour vous aider.</p>
+            <p className="cta-sub">Cliquez pour nous contacter et débuter dès maintenant.</p>
+            <a href="#contact" aria-label="Aller au formulaire de contact" className="cta-arrow">↓</a>
           </div>
         </section>
 
         {/* Contact */}
-        <section id="contact" className="section">
-          <div className="mx-auto max-w-6xl px-4 grid md:grid-cols-2 gap-8">
-            <div>
-              <SectionTitle title="Contact" subtitle="Parlons de votre projet en toute confidentialité." />
-              <ContactForm />
+        <section id="contact" className="section contact-premium">
+          <div className="mx-auto max-w-6xl px-4">
+            <div className="text-center contact-head">
+              <div className="eyebrow" style={{color:'var(--accent)'}}>Formulaire de contact</div>
+              <h2 className="mb-2">Nous vous répondrons rapidement</h2>
+              <p className="prose max-w-3xl mx-auto">Remplissez le formulaire ci‑dessous et l’un de nos experts vous recontactera rapidement.</p>
             </div>
-            <div className="rounded-[16px] bg-white p-6">
-              <h3 className="font-semibold mb-2">Coordonnées</h3>
-              <ul className="text-[color:var(--gray600)]">
-                <li>Email: contact@m-investment.ma</li>
-                <li>Téléphone: +212 6 00 00 00 00</li>
-                <li>LinkedIn: linkedin.com/company/m-investment</li>
-              </ul>
+            <div className="mt-8">
+              <div className="contact-form contact-form--wide mx-auto">
+                <ContactForm />
+              </div>
             </div>
         </div>
         </section>
       </main>
 
-      <footer className="bg-white border-t border-black/10">
-        <div className="mx-auto max-w-6xl px-4 py-8 grid md:grid-cols-3 gap-6 text-sm">
-          <p className="text-[color:var(--gray600)]">M-Investment — Accompagnement immobilier, sécurisation juridique, gestion post-achat.</p>
-          <nav aria-label="Liens de bas de page" className="flex gap-4">
-            {[
-              { href: "#hero", label: "Accueil" },
-              { href: "#why", label: "Pourquoi nous choisir" },
-              { href: "#about", label: "À propos" },
-              { href: "#services", label: "Services" },
-              { href: "#zones", label: "Zones" },
-              { href: "#contact", label: "Contact" },
-            ].map((l) => (
-              <a key={l.href} href={l.href} className="hover:text-[color:var(--gold)]">{l.label}</a>
-            ))}
-          </nav>
-          <div className="text-[color:var(--gray600)]">Mentions légales — © {new Date().getFullYear()} M-Investment</div>
+      <footer className="footer-premium">
+        <div className="mx-auto max-w-6xl px-4 py-10 grid gap-10 md:grid-cols-3">
+          <div className="footer-brand">
+            <a href="#hero" aria-label="M-Investment">
+              <Image src="/assets/icons/full-logocropped.png" alt="M‑Investment" width={150} height={48} />
+            </a>
+            <p className="mt-4 text-[color:var(--gray700)]">
+              M‑Investment conçoit et pilote des investissements immobiliers modernes et fiables pour valoriser votre patrimoine.
+            </p>
+          </div>
+          <div>
+            <h3 className="footer-head">Nos liens</h3>
+            <ul className="footer-links">
+              <li><a href="#why">Processus</a></li>
+              <li><a href="#services">Nos services</a></li>
+              <li><a href="#zones">Projets</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li><a href="#about">Mot du gérant</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="footer-head">Contact</h3>
+            <ul className="footer-contact">
+              <li>+212 6 00 00 00 00</li>
+              <li>contact@m-investment.ma</li>
+              <li>Instagram</li>
+            </ul>
+          </div>
         </div>
+        <div className="mx-auto max-w-6xl px-4 pb-8 text-[color:var(--gray600)] text-sm">© {new Date().getFullYear()} M‑Investment — Tous droits réservés</div>
       </footer>
 
       {/* No WhatsApp FAB per request */}

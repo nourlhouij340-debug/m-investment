@@ -1,13 +1,7 @@
 import type { Metadata } from "next";
-import { Inter, Cormorant_Garamond } from "next/font/google";
+import { Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import "../styles/hero.css";
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  weight: ["300","400","500","600","700"],
-});
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
@@ -48,7 +42,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <body className={`${inter.variable} ${cormorant.variable} antialiased`} style={{ WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}>
+      <body className={`${cormorant.variable} antialiased`} style={{ WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}>
         {children}
       </body>
     </html>
