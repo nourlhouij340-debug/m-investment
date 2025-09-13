@@ -1,9 +1,9 @@
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond } from "next/font/google";
+import { Playfair_Display } from "next/font/google";
 import "./globals.css";
 import "../styles/hero.css";
 
-const cormorant = Cormorant_Garamond({
+const cormorant = Playfair_Display({
   variable: "--font-cormorant",
   subsets: ["latin"],
   weight: ["400","500","600","700"],
