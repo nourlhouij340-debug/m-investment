@@ -17,7 +17,7 @@ export default function Home() {
       <main>
         {/* Hero (clean, cream, left text, right image) */}
         <section id="hero" className="hero-premium">
-          <Image src="/assets/icons/rabat.jpg" alt="Ville de Rabat" fill className="hero-bg-img" priority sizes="100vw" />
+          <Image src="/assets/icons/hero.jpg" alt="Arrière‑plan héro" fill className="hero-bg-img" priority sizes="100vw" />
           <div className="content">
             <h1 className="text-balance text-[clamp(28px,4vw,44px)] font-medium leading-[1.15]">
               <span>M-Investment</span>
@@ -48,7 +48,7 @@ export default function Home() {
             <div className="services-hero">
               <ServiceTile
                 title="Conseil & accompagnement immobilier"
-                imageUrl="/assets/icons/rabat.jpg"
+                imageUrl="/assets/icons/Service1.png"
                 items={[
                   "Étude de vos besoins et de votre budget",
                   "Sélection de biens fiables et vérifiés (titres fonciers, conformité juridique)",
@@ -57,7 +57,7 @@ export default function Home() {
               />
               <ServiceTile
                 title="Sécurisation juridique & administrative"
-                imageUrl="/assets/icons/rabat.jpg"
+                imageUrl="/assets/icons/Service2.png"
                 items={[
                   "Vérification légale des titres et contrats",
                   "Coordination avec notaires, avocats et administrations",
@@ -66,7 +66,7 @@ export default function Home() {
               />
               <ServiceTile
                 title="Gestion post-achat & installation"
-                imageUrl="/assets/icons/rabat.jpg"
+                imageUrl="/assets/icons/Service3.png"
                 items={[
                   "Accompagnement pour la location ou la gestion de votre bien",
                   "Services de conciergerie et d’entretien",
@@ -116,58 +116,50 @@ export default function Home() {
             <h2 className="mb-6">Zones populaires que nous couvrons</h2>
             <div className="zones-grid">
               {/* Row 1 */}
-              <ZoneCard className="zone-span-3 zone-row-2" title="Casablanca" image="/assets/icons/rabat.jpg" description="Capitale économique; Anfa, Racine, Californie, Ain Diab. Résidentiel premium, bureaux et projets d’investissement." />
-              <ZoneCard className="zone-span-3" title="Rabat" image="/assets/icons/rabat.jpg" description="Souissi, Hay Riad, Les Orangers. Ambassades, institutions, résidences familiales et haut standing." />
+              <ZoneCard className="zone-span-3 zone-row-2" title="Casablanca" image="/assets/icons/Casablanca.png" description="Capitale économique; Anfa, Racine, Californie, Ain Diab. Résidentiel premium, bureaux et projets d’investissement." />
+              <ZoneCard className="zone-span-3" title="Rabat" image="/assets/icons/Rabat.png" description="Souissi, Hay Riad, Les Orangers. Ambassades, institutions, résidences familiales et haut standing." />
               {/* Row 2 */}
-              <ZoneCard className="zone-span-3" title="Marrakech" image="/assets/icons/rabat.jpg" description="Palmeraie, Hivernage, Médina et axes Ourika / Ouarzazate. Villas, riads et résidences lifestyle." />
+              <ZoneCard className="zone-span-3" title="Marrakech" image="/assets/icons/Marrakech.png" description="Palmeraie, Hivernage, Médina et axes Ourika / Ouarzazate. Villas, riads et résidences lifestyle." />
               {/* Row 3 */}
-              <ZoneCard className="zone-span-2" title="Tanger" image="/assets/icons/rabat.jpg" description="Corniche, Marchan, Cap Spartel. Hub logistique et résidentiel en forte croissance." />
-              <ZoneCard className="zone-span-2" title="Agadir" image="/assets/icons/rabat.jpg" description="Plages, resorts et quartiers résidentiels. Opportunités locatives et pied‑à‑terre en bord de mer." />
-              <ZoneCard className="zone-span-2" title="Autre" image="/assets/icons/rabat.jpg" description="Sélection d'autres zones: Essaouira, El Jadida, Saïdia, Bouznika, etc." />
+              <ZoneCard className="zone-span-2" title="Tanger" image="/assets/icons/Tanger.png" description="Corniche, Marchan, Cap Spartel. Hub logistique et résidentiel en forte croissance." />
+              <ZoneCard className="zone-span-2" title="Agadir" image="/assets/icons/Agadir.png" description="Plages, resorts et quartiers résidentiels. Opportunités locatives et pied‑à‑terre en bord de mer." />
+              <ZoneCard className="zone-span-2" title="Autre" image="/assets/icons/Autre.png" description="Sélection d'autres zones: Essaouira, El Jadida, Saïdia, Bouznika, etc." />
             </div>
           </div>
         </section>
 
-        {/* About (premium, inspired by Bosworth Property) */}
+        {/* About (premium with panel then plain text) */}
         <section id="about" className="section about-premium">
           <div className="mx-auto max-w-6xl px-4 about-rows">
-            {/* Row 1: image left, text right */}
+            {/* Row 1: image left, text panel right */}
             <div className="about-row">
               <div className="about-img">
-                <Image src="/assets/icons/rabat.jpg" alt="Rabat — Maroc" fill className="object-cover rounded-[var(--radius-lg)]" />
+                <Image src="/assets/icons/founder.png" alt="El Alami Montasser — Fondateur" fill className="object-cover rounded-[var(--radius-lg)]" sizes="(max-width: 1024px) 100vw, 50vw" />
               </div>
-              <div className="about-content">
+              <div className="about-panel about-animate">
                 <div className="eyebrow">À propos</div>
-                <h2 className="mb-3">El Alami Montasser — Fondateur de M‑Investment</h2>
-                <p className="prose about-text">
-                  Originaire de Rabat, Montasser a bâti en France une solide expérience bancaire (affaires professionnelles, conseil patrimonial). Double culture France/Maroc, vision internationale et parfaite connaissance du terrain local.
-                </p>
-                <h3 className="about-sub">Expertises clés</h3>
-                <ul className="about-list">
-                  <li>Conseil patrimonial</li>
-                  <li>Accompagnement des professionnels et entrepreneurs</li>
-                  <li>Structuration de projets d’investissement sécurisés</li>
-                  <li>Stratégies financières et immobilières adaptées</li>
-                </ul>
+                <h2 className="mb-1">El Alami Montasser — Fondateur</h2>
+                <div className="gold-divider mb-2" />
+                <p className="about-signature">— Transparence, Confiance, Expertise</p>
+                <div className="about-body">
+                  <p className="prose about-text">
+                    Originaire de Rabat, Montasser a bâti en France une solide expérience bancaire (affaires professionnelles, conseil patrimonial).
+                    Double culture France/Maroc, vision internationale et parfaite connaissance du terrain local.
+                  </p>
+                  <h3 className="about-sub">Expertises clés</h3>
+                  <ul className="about-list">
+                    <li>Conseil patrimonial</li>
+                    <li>Accompagnement des professionnels & entrepreneurs</li>
+                    <li>Structuration de projets d’investissement sécurisés</li>
+                    <li>Stratégies financières & immobilières adaptées</li>
+                  </ul>
+                </div>
               </div>
             </div>
 
-            {/* Row 2: text left, image right */}
-            <div className="about-row about-row--reverse">
-              <div className="about-content">
-                <h3 className="about-sub">Aujourd’hui, il accompagne ses clients dans</h3>
-                <ul className="about-list">
-                  <li>La sécurisation des investissements immobiliers au Maroc</li>
-                  <li>L’installation et la relocalisation sereine</li>
-                  <li>Le développement de solutions patrimoniales durables</li>
-                </ul>
-                <p className="prose about-text mt-2">
-                  Son credo: transparence, confiance et expertise pour des projets pérennes dans un Maroc en forte croissance.
-                </p>
-              </div>
-              <div className="about-img">
-                <Image src="/assets/icons/rabat.jpg" alt="Architecture — Maroc" fill className="object-cover rounded-[var(--radius-lg)]" />
-              </div>
+            {/* Row 2: keep only CTA button */}
+            <div className="about-plain about-center about-animate delay-1">
+              <a href="#contact" className="btn btn--primary">Discuter de votre projet</a>
             </div>
           </div>
         </section>
@@ -200,7 +192,7 @@ export default function Home() {
       </main>
 
       <footer className="footer-premium">
-        <div className="mx-auto max-w-6xl px-4 py-10 grid gap-10 md:grid-cols-3">
+        <div className="mx-auto max-w-6xl px-4 py-12 grid gap-10 md:grid-cols-3 items-start footer-grid">
           <div className="footer-brand">
             <a href="#hero" aria-label="M-Investment">
               <Image src="/assets/icons/full-logocropped.png" alt="M‑Investment" width={150} height={48} />
@@ -212,23 +204,26 @@ export default function Home() {
           <div>
             <h3 className="footer-head">Nos liens</h3>
             <ul className="footer-links">
-              <li><a href="#why">Processus</a></li>
-              <li><a href="#services">Nos services</a></li>
-              <li><a href="#zones">Projets</a></li>
-              <li><a href="#contact">Contact</a></li>
-              <li><a href="#about">Mot du gérant</a></li>
+              <li><a href="#why" className="underline-link">Pourquoi nous choisir</a></li>
+              <li><a href="#services" className="underline-link">Nos services</a></li>
+              <li><a href="#zones" className="underline-link">Zones d’intervention</a></li>
+              <li><a href="#contact" className="underline-link">Contact</a></li>
+              <li><a href="#about" className="underline-link">À propos</a></li>
             </ul>
           </div>
           <div>
             <h3 className="footer-head">Contact</h3>
             <ul className="footer-contact">
-              <li>+212 6 00 00 00 00</li>
-              <li>contact@m-investment.ma</li>
-              <li>Instagram</li>
+              <li><a href="tel:+212600000000" className="underline-link">+212 6 00 00 00 00</a></li>
+              <li><a href="mailto:contact@m-investment.ma" className="underline-link">contact@m-investment.ma</a></li>
+              <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" className="underline-link">Instagram</a></li>
             </ul>
           </div>
         </div>
-        <div className="mx-auto max-w-6xl px-4 pb-8 text-[color:var(--gray600)] text-sm">© {new Date().getFullYear()} M‑Investment — Tous droits réservés</div>
+        <div className="footer-bottom mx-auto max-w-6xl px-4 py-6 text-[color:var(--gray600)] text-sm flex items-center justify-between gap-4">
+          <span>© {new Date().getFullYear()} M‑Investment — Tous droits réservés</span>
+          <a href="https://www.creaeshop.ma" target="_blank" rel="noopener noreferrer" className="made subtle underline-link">Site par CreaEshop Agency</a>
+        </div>
       </footer>
 
       {/* No WhatsApp FAB per request */}
