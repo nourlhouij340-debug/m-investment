@@ -16,6 +16,15 @@ export const metadata: Metadata = {
     "Cabinet d’accompagnement immobilier au Maroc : conseil, sécurisation juridique & administrative, et services post-achat.",
   metadataBase: new URL("https://example.com"),
   alternates: { canonical: "https://example.com" },
+  icons: {
+    icon: [
+      { url: "/assets/icons/logotouse.png", sizes: "32x32", type: "image/png" },
+      { url: "/assets/icons/logotouse.png", sizes: "48x48", type: "image/png" },
+      { url: "/assets/icons/logotouse.png", sizes: "64x64", type: "image/png" },
+    ],
+    apple: [{ url: "/assets/icons/logotouse.png", sizes: "180x180", type: "image/png" }],
+    shortcut: "/assets/icons/logotouse.png",
+  },
   openGraph: {
     title: "M-Investment",
     description:
