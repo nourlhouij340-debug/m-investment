@@ -123,7 +123,7 @@ export default function Home() {
               {/* Row 3 */}
               <ZoneCard className="zone-span-2" title="Tanger" image="/assets/icons/rabat.jpg" description="Corniche, Marchan, Cap Spartel. Hub logistique et résidentiel en forte croissance." />
               <ZoneCard className="zone-span-2" title="Agadir" image="/assets/icons/rabat.jpg" description="Plages, resorts et quartiers résidentiels. Opportunités locatives et pied‑à‑terre en bord de mer." />
-              <ZoneCard className="zone-span-2" title="Principales zones touristiques & résidentielles" image="/assets/icons/rabat.jpg" description="Sélection des stations balnéaires et villes à forte attractivité: Essaouira, El Jadida, Saïdia, Bouznika, etc." />
+              <ZoneCard className="zone-span-2" title="Autre" image="/assets/icons/rabat.jpg" description="Sélection d'autres zones: Essaouira, El Jadida, Saïdia, Bouznika, etc." />
             </div>
           </div>
         </section>

@@ -157,16 +157,29 @@
 .zone-face { position:absolute; inset:0; backface-visibility: hidden; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-soft); }
 .zone-front::after { content:""; position:absolute; inset:0; background: linear-gradient(180deg, rgba(0,0,0,.2), rgba(0,0,0,.45)); }
 .zone-title { position:absolute; left:12px; bottom:12px; color:#fff; font-weight:500; font-size:15px; z-index:1; }
+.zone-title .title-mobile { display:none }
+@media (max-width: 640px){
+  .zone-title { font-size:14px; line-height:1.2; max-width: 85%; }
+  .zone-title .title-desktop { display:none }
+  .zone-title .title-mobile { display:block }
+}
 .zone-back { background:#fff; transform: rotateY(180deg); display:flex; flex-direction:column; justify-content:center; align-items:center; padding:16px; text-align:center; }
 .zone-back-title { font-weight:600; margin-bottom:8px; }
 .zone-back-text { color: var(--gray700); display:-webkit-box; -webkit-box-orient:vertical; overflow:hidden; -webkit-line-clamp:5; line-height:1.5; font-size:14px; }
 .zone-row-2 .zone-back-text { -webkit-line-clamp:10; }
+@media (max-width: 640px){
+  /* Make back-face text scrollable on small screens */
+  .zone-back { align-items: center; }
+  .zone-back-text { display:block; -webkit-line-clamp:unset; overflow-y:auto; max-height: 62%; padding-right:6px; }
+  .zone-back-text::-webkit-scrollbar { width: 4px; }
+  .zone-back-text::-webkit-scrollbar-thumb { background: rgba(0,0,0,.2); border-radius: 4px; }
+}
 
 /* Premium quote */
 .quote-premium { margin: 0; padding: 0; display: grid; grid-template-columns: auto 1fr auto; align-items: center; justify-items: center; gap: 16px; text-align: center; }
 .quote-mark { color: #a77b2e; font-size: clamp(42px, 5vw, 68px); line-height: 1; font-weight: 600; font-family: var(--font-cormorant), serif; }
 .quote-mark.end { align-self: end; }
-.quote-text { margin: 0; font-style: italic; color: var(--black); font-weight: 300; font-size: clamp(14px, 1.6vw, 18px); line-height: 1.7; text-shadow: 0 1px 1px rgba(0,0,0,.06); font-family: var(--font-inter), sans-serif; }
+.quote-text { margin: 0; font-style: italic; color: var(--black); font-weight: 300; font-size: clamp(15px, 1.7vw, 19px); line-height: 1.7; text-shadow: 0 1px 1px rgba(0,0,0,.06); font-family: var(--font-inter), sans-serif; }
 
 .whatsapp-fab { position: fixed; right: 24px; bottom: 24px; z-index: 60; box-shadow: 0 10px 30px rgba(0,0,0,.12); border-radius:9999px; background:#25D366; color:#fff; padding: 10px 16px; display:flex; align-items:center; gap:8px; }
 .whatsapp-fab img { width:20px; height:20px }
@@ -201,7 +214,7 @@
 }
 
 /* Navbar link styles */
-.nav-link { position: relative; font-weight: 500; text-underline-offset: 4px; transition: color .2s ease; }
+.nav-link { position: relative; font-weight: 500; text-underline-offset: 4px; transition: color .2s ease; font-size: 15px; }
 .nav-link-light { color: rgba(255,255,255,.95); }
 .nav-link-light:hover, .nav-link-light.active { color: #fff; }
 .nav-link-dark { color: rgba(15,15,15,.85); }
@@ -272,6 +285,31 @@
 .service-btn { display:inline-block; margin:10px auto 0; padding:4px 10px; border:1px solid rgba(0,0,0,.22); border-radius: var(--radius-lg); font-size: 11px; font-weight: 400; background:#fff; cursor:pointer; width: fit-content; transition: transform .15s ease, background-color .15s ease, border-color .15s ease, box-shadow .15s ease; }
 .service-card:hover .service-btn { transform: translateY(-1px); border-color: var(--gold); background: rgba(201,164,73,.08); box-shadow: 0 4px 10px rgba(201,164,73,.15); }
 .service-back .service-btn.alt { border-color: var(--gold); color: var(--black); }
+
+/* Micro-interaction hint on service front */
+.service-hint { display:none; align-items:center; gap:4px; margin-top:4px; font-size:12px; opacity:.92; color:#fff; text-shadow:0 1px 6px rgba(0,0,0,.45); }
+.service-hint .chev { display:inline-block; transform: translateX(0); }
+@media (prefers-reduced-motion: no-preference){
+  .service-hint .chev { animation: hintSlide 1.2s ease-in-out infinite; }
+}
+@keyframes hintSlide { 0%,100%{ transform: translateX(0) } 50%{ transform: translateX(6px) } }
+
+/* Hover cue for desktop */
+.service-hover { position:absolute; right:10px; bottom:10px; font-size:16px; opacity:.0; color:#fff; text-shadow:0 1px 6px rgba(0,0,0,.45); transform: translateX(0); transition: opacity .2s ease, transform .2s ease; }
+.service-card:hover .service-hover { opacity: .95; transform: translateX(6px); }
+
+/* Mobile specific hint */
+@media (max-width: 640px){
+  .service-hint { display:flex; }
+  .service-hover { display:none; }
+}
+
+/* Mobile responsiveness adjustments */
+@media (max-width: 640px){
+  /* Restore web bento proportions on mobile: 6-column base grid remains; items keep spans */
+  .zones-grid{ grid-template-columns: repeat(6, 1fr); grid-auto-rows: 160px; }
+  .service-card { height: 260px; }
+}
 
 /* Why premium */
 .why-premium { position: relative; background: transparent; }
@@ -363,8 +401,13 @@
 .contact-form button { min-width: 220px; font-weight: 500; }
 
 /* Footer premium */
-.footer-premium { background: #fff; border-top: 1px solid rgba(0,0,0,.08); }
+.footer-premium { position: relative; background: #fff; border-top: 1px solid rgba(0,0,0,.08); overflow:hidden; }
+.footer-premium::before { content:""; position:absolute; inset:-60% -20% auto -20%; height: 220px; background: radial-gradient(500px 120px at 50% 0%, rgba(201,164,73,.18), transparent 70%); filter: blur(12px); opacity:.5; }
 .footer-head { font-family: var(--font-cormorant), serif; font-weight: 600; margin-bottom: 10px; }
 .footer-links, .footer-contact { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
 .footer-links a { color: var(--black); }
 .footer-links a:hover { color: var(--gold); }
+@media (prefers-reduced-motion: no-preference) {
+  .footer-links li, .footer-contact li { animation: fadeUp .6s ease both; }
+  .footer-links li:nth-child(1){ animation-delay:.05s } .footer-links li:nth-child(2){ animation-delay:.1s } .footer-links li:nth-child(3){ animation-delay:.15s } .footer-links li:nth-child(4){ animation-delay:.2s } .footer-links li:nth-child(5){ animation-delay:.25s }
+}

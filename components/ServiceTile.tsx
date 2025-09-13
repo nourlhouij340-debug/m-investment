@@ -10,7 +10,7 @@ interface ServiceTileProps {
 
 export default function ServiceTile({ title, items, href = "#contact", imageUrl, ctaText = "Nous contacter" }: ServiceTileProps) {
   return (
-    <a className="service-card" href={href} aria-label={title}>
+    <div className="service-card" aria-label={title}>
       <div className="service-inner">
         {/* Front face: image + title only */}
         <div className="service-face service-front" style={{ backgroundImage: `url(${imageUrl})` }}>
@@ -18,6 +18,13 @@ export default function ServiceTile({ title, items, href = "#contact", imageUrl,
           <div className="service-strip" />
           <div className="service-content">
             <h3 className="service-title">{title}</h3>
+            <div className="service-hint" aria-hidden>
+              <span>Appuyer pour voir</span>
+              <span className="chev">››</span>
+            </div>
+          </div>
+          <div className="service-hover" aria-hidden>
+            <span className="chev">››</span>
           </div>
         </div>
         {/* Back face: bullet list + CTA */}
@@ -29,11 +36,11 @@ export default function ServiceTile({ title, items, href = "#contact", imageUrl,
                 <li key={t} className="service-item">{t}</li>
               ))}
             </ul>
-            <span className="service-btn alt">{ctaText}</span>
+            <a className="service-btn alt" href={href}>{ctaText}</a>
           </div>
         </div>
       </div>
-    </a>
+    </div>
   );
 }
 
