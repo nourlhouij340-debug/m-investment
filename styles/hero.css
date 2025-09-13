@@ -222,6 +222,7 @@
 /* Navbar link styles */
 .nav-link { position: relative; font-weight: 600; text-underline-offset: 4px; transition: color .2s ease; font-size: 16px; }
 @media (min-width: 1024px){ .nav-link { font-size: 17px; } }
+@media (max-width: 640px){ .nav-link { display: none !important; } }
 .nav-link-light { color: rgba(255,255,255,.95); }
 .nav-link-light:hover, .nav-link-light.active { color: #fff; }
 .nav-link-dark { color: rgba(15,15,15,.85); }
