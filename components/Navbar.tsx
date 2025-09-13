@@ -51,9 +51,9 @@ export default function Navbar() {
           ))}
         </ul>
         {/* Mobile compact nav */}
-        <ul className="md:hidden flex items-center justify-center gap-4 overflow-x-auto px-2 snap-x snap-mandatory" aria-label="Navigation mobile">
+        <ul className="md:hidden flex flex-wrap items-center justify-center gap-3 px-2" aria-label="Navigation mobile">
           {items.map((i) => (
-            <li key={i.href} className="snap-start flex-shrink-0">
+            <li key={i.href} className="flex-shrink-0">
               <a
                 href={i.href}
                 onClick={(e) => handle(e, i.href)}
