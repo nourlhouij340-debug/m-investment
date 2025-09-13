@@ -30,7 +30,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className={`w-full pt-0 pb-0 z-50 bg-[color:var(--cream)] md:bg-transparent md:sticky top-0 ${scrolled ? "md:bg-[color:var(--cream)]/85 md:backdrop-blur" : ""}`}>
+    <header className={`w-full pt-0 pb-0 z-50 absolute md:sticky top-0 bg-transparent ${scrolled ? "md:bg-[color:var(--cream)]/85 md:backdrop-blur" : ""}`}>
       <nav className="mx-auto max-w-6xl px-4 h-16 flex items-center justify-between md:grid md:grid-cols-[auto_1fr_auto]" aria-label="Navigation principale">
         <div className="flex items-center gap-4">
           <a href="#hero" onClick={(e) => handle(e, "#hero")} className="flex items-center gap-2">
