@@ -49,6 +49,7 @@ body {
   color: var(--black);
   font-family: var(--font-cormorant), serif;
   font-size: var(--body-size);
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4 { font-family: var(--font-cormorant), serif; font-weight: 600; letter-spacing: .02em; }

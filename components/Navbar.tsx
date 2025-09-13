@@ -50,6 +50,20 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
+        {/* Mobile compact nav */}
+        <ul className="md:hidden flex items-center justify-center gap-4 overflow-x-auto px-2 snap-x snap-mandatory" aria-label="Navigation mobile">
+          {items.map((i) => (
+            <li key={i.href} className="snap-start flex-shrink-0">
+              <a
+                href={i.href}
+                onClick={(e) => handle(e, i.href)}
+                className={`nav-link ${scrolled ? "nav-link-dark" : "nav-link-light"} ${active && `#${active}` === i.href ? "active" : ""}`}
+              >
+                {i.label}
+              </a>
+            </li>
+          ))}
+        </ul>
         <div className="justify-self-end">
           <a href="#contact" onClick={(e) => handle(e, "#contact")} className="nav-cta rounded-full bg-[#A67C2D] text-white font-semibold text-sm py-2 px-4 shadow-[0_8px_20px_rgba(0,0,0,.08)]">Contact</a>
         </div>

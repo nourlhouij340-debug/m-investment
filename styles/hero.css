@@ -387,6 +387,9 @@
 
 /* CTA hero (full-bleed parallax-like) */
 .cta-hero { position: relative; min-height: 78vh; display:grid; place-items:center; text-align:center; color:#fff; background: url('/assets/icons/Cta.png') center/cover fixed no-repeat; }
+@media (max-width: 640px){
+  .cta-hero { background-attachment: scroll; }
+}
 .cta-hero::before { content:""; position:absolute; inset:0; background: rgba(0,0,0,.45); }
 .cta-inner { position: relative; z-index: 1; max-width: 1000px; padding: 40px 16px; display:grid; gap: 10px; }
 .cta-title { font-family: var(--font-cormorant), serif; font-size: clamp(26px,5vw,44px); letter-spacing:.08em; text-transform: uppercase; }
