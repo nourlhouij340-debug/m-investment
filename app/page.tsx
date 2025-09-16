@@ -20,7 +20,7 @@ export default function Home() {
           <Image src="/assets/icons/hero.jpg" alt="Arrière‑plan héro" fill className="hero-bg-img" priority sizes="100vw" />
           <div className="content">
             <h1 className="text-balance text-[clamp(28px,4vw,44px)] font-medium leading-[1.15]">Sécurisez et valorisez vos investissements au Maroc avec M-Investment</h1>
-            <p className="mt-3 text-[clamp(15px,1.4vw,17px)] opacity-90">Un accompagnement sur mesure, couvrant chaque étape : étude et accompagnement financier auprès des établissements financiers/banques, acquisition, formalités administratives et suivi après l’achat.</p>
+            <p className="mt-3 text-[clamp(15px,1.4vw,17px)] opacity-90">Un accompagnement sur mesure, couvrant chaque étape : étude et accompagnement financier auprès des établissements bancaires, acquisition, formalités administratives et suivi après l’achat.</p>
             <div className="mt-6 flex items-center justify-center gap-4 flex-wrap">
               <a href="#services" className="btn-primary btn-spotlight nav-cta">Découvrir nos services</a>
               <a href="#contact" className="btn-secondary nav-cta">Nous contacter</a>
