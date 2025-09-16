@@ -80,8 +80,7 @@ export default function Home() {
             <div className="why-head text-center">
               <div className="eyebrow">Pourquoi nous choisir</div>
               <h2 className="mb-2">Un accompagnement premium, discret et fiable</h2>
-              <p className="prose text-[color:var(--gray700)] max-w-3xl mx-auto">Un accompagnement complet, clair et sur mesure.<br />
-              Chez M-Investment, nous guidons chaque client avec fiabilité et discrétion, de la conception à la réalisation de son projet. Chaque étape est sécurisée : du financement, des démarches juridiques et administratives, de l’acquisition du bien, jusqu’à la gestion après l’achat.</p>
+              <p className="prose text-[color:var(--gray700)] max-w-3xl mx-auto">Chez M-Investment nous guidons chacun de nos clients avec fiabilité, discrétion et de manière personnalisée, de la conception à la réalisation de son projet.</p>
             </div>
             <div className="why-grid">
               <div className="why-card text-center">
