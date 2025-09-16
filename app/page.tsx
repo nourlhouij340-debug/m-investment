@@ -43,7 +43,7 @@ export default function Home() {
             <h2 className="mb-6">Accompagnement complet</h2>
             <div className="services-hero">
               <ServiceTile
-                title="Conseil et accompagnement financier et immobilier"
+                title="Conseil et accompagnement financier & immobilier"
                 imageUrl="/assets/icons/Service1.png"
                 items={[
                   "Étude de vos besoins et de votre budget",
