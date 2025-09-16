@@ -37,3 +37,5 @@ export function smoothScrollTo(id: string) {
   window.scrollTo({ top: y, behavior: "smooth" });
 }
 
+
+

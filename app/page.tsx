@@ -19,12 +19,8 @@ export default function Home() {
         <section id="hero" className="hero-premium">
           <Image src="/assets/icons/hero.jpg" alt="Arrière‑plan héro" fill className="hero-bg-img" priority sizes="100vw" />
           <div className="content">
-            <h1 className="text-balance text-[clamp(28px,4vw,44px)] font-medium leading-[1.15]">
-              <span>M-Investment</span>
-              <br />
-              L’excellence au service de votre patrimoine au <strong>Maroc</strong>
-            </h1>
-            <p className="mt-3 text-[clamp(15px,1.4vw,17px)] opacity-90">Sécuriser et simplifier votre investissement au Maroc. Accompagnement discret et expert pour MRE et investisseurs internationaux.</p>
+            <h1 className="text-balance text-[clamp(28px,4vw,44px)] font-medium leading-[1.15]">Sécurisez et valorisez vos investissements au Maroc avec M-Investment</h1>
+            <p className="mt-3 text-[clamp(15px,1.4vw,17px)] opacity-90">Un accompagnement sur mesure, couvrant chaque étape : étude et accompagnement financier auprès des établissements financiers/banques, acquisition, formalités administratives et suivi après l’achat.</p>
             <div className="mt-6 flex items-center justify-center gap-4 flex-wrap">
               <a href="#services" className="btn-primary btn-spotlight nav-cta">Découvrir nos services</a>
               <a href="#contact" className="btn-secondary nav-cta">Nous contacter</a>
@@ -37,7 +33,7 @@ export default function Home() {
           <div className="mx-auto max-w-6xl px-4 mission-wrap">
             <QuoteSection />
             <div className="mission-glow" aria-hidden="true" />
-          </div>
+        </div>
         </section>
 
         {/* Services (three-panel image tiles) */}
@@ -47,7 +43,7 @@ export default function Home() {
             <h2 className="mb-6">Accompagnement complet</h2>
             <div className="services-hero">
               <ServiceTile
-                title="Conseil & accompagnement immobilier"
+                title="Conseil et accompagnement financier et immobilier"
                 imageUrl="/assets/icons/Service1.png"
                 items={[
                   "Étude de vos besoins et de votre budget",
@@ -56,12 +52,13 @@ export default function Home() {
                 ]}
               />
               <ServiceTile
-                title="Sécurisation juridique & administrative"
+                title="Sécurisation juridique, administrative & financière"
                 imageUrl="/assets/icons/Service2.png"
                 items={[
                   "Vérification légale des titres et contrats",
                   "Coordination avec notaires, avocats et administrations",
                   "Suivi des procédures d’enregistrement et de financement",
+                  "Accompagnement financier : étude de financement, appui au montage du dossier bancaire ou achat au comptant",
                 ]}
               />
               <ServiceTile
@@ -83,7 +80,8 @@ export default function Home() {
             <div className="why-head text-center">
               <div className="eyebrow">Pourquoi nous choisir</div>
               <h2 className="mb-2">Un accompagnement premium, discret et fiable</h2>
-              <p className="prose text-[color:var(--gray700)] max-w-3xl mx-auto">Inspiré des meilleures pratiques du conseil immobilier premium, notre approche combine rigueur, réseau local et confidentialité absolue pour sécuriser et valoriser votre investissement.</p>
+              <p className="prose text-[color:var(--gray700)] max-w-3xl mx-auto">Un accompagnement complet, clair et sur mesure.<br />
+              Chez M-Investment, nous guidons chaque client avec fiabilité et discrétion, de la conception à la réalisation de son projet. Chaque étape est sécurisée : du financement, des démarches juridiques et administratives, de l’acquisition du bien, jusqu’à la gestion après l’achat.</p>
             </div>
             <div className="why-grid">
               <div className="why-card text-center">
@@ -198,7 +196,7 @@ export default function Home() {
               <Image src="/assets/icons/full-logocropped.png" alt="M‑Investment" width={150} height={48} />
             </a>
             <p className="mt-4 text-[color:var(--gray700)]">
-              M‑Investment conçoit et pilote des investissements immobiliers modernes et fiables pour valoriser votre patrimoine.
+              M-Investment, cabinet spécialisé dans l’accompagnement des investissements au Maroc : conseil stratégique, sécurisation juridique, solutions financières et gestion post-achat, pour faire croître et protéger durablement votre patrimoine.
             </p>
           </div>
           <div>

@@ -57,7 +57,7 @@ export default function QuoteSection() {
       <blockquote className="quote-premium relative z-[3]">
         <span className="quote-mark">“</span>
         <p className="quote-text">
-          Investir au Maroc est bien plus qu’un projet immobilier, c’est un choix de vie et un héritage à transmettre. Chez M-Investment, nous vous accompagnons dans cette démarche avec discrétion, exigence et expertise. Notre rôle est de sécuriser chaque étape et valoriser votre investissement, pour que votre projet reflète vos aspirations.
+          Chez M-Investment, nous savons qu’investir au Maroc ne se limite pas à acheter un bien : c’est créer de la valeur, préparer l’avenir et réussir votre installation. C’est pourquoi nous vous accompagnons à chaque étape — financement, sécurisation juridique et gestion post-acquisition — avec rigueur et transparence.
         </p>
         <span className="quote-mark end">”</span>
       </blockquote>
