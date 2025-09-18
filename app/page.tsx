@@ -19,7 +19,7 @@ export default function Home() {
         <section id="hero" className="hero-premium">
           <Image src="/assets/icons/hero.jpg" alt="Arrière‑plan héro" fill className="hero-bg-img" priority sizes="100vw" />
           <div className="content">
-            <h1 className="text-balance text-[clamp(28px,4vw,44px)] font-medium leading-[1.15]">Développez et valorisez vos investissements au Maroc avec M-Investment</h1>
+            <h1 className="text-balance text-[clamp(28px,4vw,44px)] font-medium leading-[1.15]">Développez et optimisez vos investissements au Maroc avec M-Investment</h1>
             <p className="mt-3 text-[clamp(15px,1.4vw,17px)] opacity-90">Un accompagnement sécurisé et sur mesure, couvrant chaque étape : étude et accompagnement financier auprès des établissements bancaires, acquisition, formalités administratives et suivi après l’achat.</p>
             <div className="mt-6 flex items-center justify-center gap-4 flex-wrap">
               <a href="#services" className="btn-primary btn-spotlight nav-cta">Découvrir nos services</a>
@@ -45,6 +45,7 @@ export default function Home() {
               <ServiceTile
                 title="Conseil et accompagnement financier & immobilier"
                 imageUrl="/assets/icons/Service1.png"
+                hook="Structurez votre projet pour décider en toute sérénité."
                 items={[
                   "Étude de vos besoins et de votre budget",
                   "Sélection de biens fiables et vérifiés (titres fonciers, conformité juridique)",
@@ -54,6 +55,7 @@ export default function Home() {
               <ServiceTile
                 title="Sécurisation juridique, administrative & financière"
                 imageUrl="/assets/icons/Service2.png"
+                hook="Zéro zone d’ombre : chaque étape est vérifiée et tracée."
                 items={[
                   "Vérification légale des titres et contrats",
                   "Coordination avec notaires, avocats et administrations",
@@ -64,12 +66,57 @@ export default function Home() {
               <ServiceTile
                 title="Gestion post-achat & installation"
                 imageUrl="/assets/icons/Service3.png"
+                hook="Un accompagnement durable, bien après la remise des clés."
                 items={[
                   "Accompagnement pour la location ou la gestion de votre bien",
                   "Services de conciergerie et d’entretien",
                   "Assistance pour votre installation (carte de séjour, scolarité, banque, santé)",
                 ]}
               />
+            </div>
+          </div>
+        </section>
+
+        {/* Formules */}
+        <section id="formules" className="section formules">
+          <div className="mx-auto max-w-6xl px-4">
+            <div className="why-head text-center">
+              <div className="eyebrow">Nos Formules</div>
+              <h2 className="mb-2">Trois niveaux d’accompagnement</h2>
+              <p className="section-lead">Des offres claires et progressives pour un accompagnement sur mesure — du diagnostic initial au suivi après l’acquisition.</p>
+            </div>
+            <div className="formules-deck">
+              <div className="formules-columns">
+                <div className="formule-col pricing-card">
+                  <h3>Formule Essentielle</h3>
+                  <p className="plan-sub">Les bases pour démarrer sereinement.</p>
+                  <ul className="formules-list">
+                    <li>Diagnostic projet & conseils personnalisés</li>
+                    <li>Accompagnement bancaire (crédit / change)</li>
+                    <li>Accompagnement administratif de base</li>
+                  </ul>
+                </div>
+                <div className="formule-col pricing-card">
+                  <h3>Formule Sérénité</h3>
+                  <p className="plan-sub">Accompagnement complet et clair, de A à Z.</p>
+                  <ul className="formules-list">
+                    <li>Diagnostic complet + simulation fiscale</li>
+                    <li>Accompagnement bancaire & juridique</li>
+                    <li>Suivi administratif A → Z (notaire, conservation foncière)</li>
+                    <li>Assistance installation (ameublement, contrats eau/électricité)</li>
+                  </ul>
+                </div>
+                <div className="formule-col pricing-card">
+                  <h3>Formule Premium</h3>
+                  <p className="plan-sub">Service haut de gamme et suivi continu.</p>
+                  <ul className="formules-list">
+                    <li>Tous les avantages de la Formule Sérénité</li>
+                    <li>Suivi de chantier / rénovation</li>
+                    <li>Mise en location (Airbnb ou longue durée)</li>
+                    <li>Conciergerie annuelle</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </section>

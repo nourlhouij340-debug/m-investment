@@ -6,9 +6,10 @@ interface ServiceTileProps {
   href?: string;
   imageUrl: string;
   ctaText?: string;
+  hook?: string;
 }
 
-export default function ServiceTile({ title, items, href = "#contact", imageUrl, ctaText = "Nous contacter" }: ServiceTileProps) {
+export default function ServiceTile({ title, items, href = "#contact", imageUrl, ctaText = "Nous contacter", hook }: ServiceTileProps) {
   return (
     <div className="service-card" aria-label={title}>
       <div className="service-inner">
@@ -27,16 +28,11 @@ export default function ServiceTile({ title, items, href = "#contact", imageUrl,
             <span className="chev">››</span>
           </div>
         </div>
-        {/* Back face: bullet list + CTA */}
+        {/* Back face: hook only (no bullets, no CTA) */}
         <div className="service-face service-back">
           <div className="service-back-content">
             <h3 className="service-back-title">{title}</h3>
-            <ul className="service-list">
-              {items.map((t) => (
-                <li key={t} className="service-item">{t}</li>
-              ))}
-            </ul>
-            <a className="service-btn alt" href={href}>{ctaText}</a>
+            {hook && <p className="service-hook">{hook}</p>}
           </div>
         </div>
       </div>

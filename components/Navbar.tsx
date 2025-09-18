@@ -8,12 +8,13 @@ import { useEffect, useState } from "react";
 const items = [
   { label: "Accueil", href: "#hero" },
   { label: "Nos Services", href: "#services" },
+  { label: "Nos Formules", href: "#formules" },
   { label: "Pourquoi nous choisir", href: "#why" },
   { label: "Zones d'intervention", href: "#zones" },
 ];
 
 export default function Navbar() {
-  const active = useActiveSection(["hero", "services", "why", "zones", "contact"]);
+  const active = useActiveSection(["hero", "services", "formules", "why", "zones", "contact"]);
   useMagneticHover(".nav-cta", 8);
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => {

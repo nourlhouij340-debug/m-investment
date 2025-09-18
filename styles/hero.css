@@ -280,7 +280,7 @@
 .service-card:hover .service-inner { transform: rotateY(180deg); }
 .service-face { position:absolute; inset:0; backface-visibility: hidden; border-radius: var(--radius-lg); overflow:hidden; box-shadow: var(--shadow-soft); }
 .service-front { background-size: cover; background-position: center; isolation:isolate; }
-.service-back { background:#fff; transform: rotateY(180deg); display:flex; align-items:center; justify-content:center; padding: 18px; text-align:left; }
+.service-back { background:#fff; transform: rotateY(180deg); display:flex; align-items:center; justify-content:center; padding: 18px; text-align:center; }
 .service-tint { position:absolute; inset:0; background: rgba(0,0,0,.35); z-index:1; }
 .service-strip { position:absolute; inset:0; background: linear-gradient(90deg, rgba(255,255,255,.0) 0%, rgba(255,255,255,.65) 50%, rgba(255,255,255,.0) 100%); mix-blend-mode: screen; opacity:.22; z-index:2; }
 .service-content { position:absolute; inset:0; display:grid; place-items: center; text-align:center; color:#fff; padding: 16px; z-index:3; }
@@ -289,11 +289,12 @@
 .service-item { display:flex; align-items:flex-start; gap:8px; }
 .service-item::before { content:"•"; color:#fff; opacity:.85; }
 .service-back .service-item::before { color: var(--gold); opacity: .9; }
-.service-back-content { max-width: 92%; display:flex; flex-direction:column; gap:8px; }
+.service-back-content { max-width: 92%; display:flex; flex-direction:column; gap:8px; align-items:center; }
 .service-back-title { font-weight: 600; margin-bottom: 8px; font-family: var(--font-cormorant), serif; color: var(--black); }
+.service-hook { margin: 2px 0 8px; color: var(--gray700); font-style: italic; font-size: 14px; line-height: 1.5; }
 .service-btn { display:inline-block; margin:10px auto 0; padding:4px 10px; border:1px solid rgba(0,0,0,.22); border-radius: var(--radius-lg); font-size: 11px; font-weight: 400; background:#fff; cursor:pointer; width: fit-content; transition: transform .15s ease, background-color .15s ease, border-color .15s ease, box-shadow .15s ease; }
 .service-card:hover .service-btn { transform: translateY(-1px); border-color: var(--gold); background: rgba(201,164,73,.08); box-shadow: 0 4px 10px rgba(201,164,73,.15); }
-.service-back .service-btn.alt { border-color: var(--gold); color: var(--black); }
+/* CTA removed on service back */
 
 /* Micro-interaction hint on service front */
 .service-hint { display:none; align-items:center; gap:4px; margin-top:4px; font-size:12px; opacity:.92; color:#fff; text-shadow:0 1px 6px rgba(0,0,0,.45); }
@@ -338,6 +339,34 @@
 .why-cta { margin-top: 24px; }
 .why-cta .btn { font-size: 14px; padding: 10px 18px; }
 .why-glow { position:absolute; inset:auto 0 0 0; height: 120px; background: radial-gradient(500px 120px at 50% 0%, rgba(201,164,73,.18), transparent 70%); filter: blur(14px); opacity:.5; pointer-events:none; }
+/* Formules list inherits card styling; adjust spacing */
+.formules-list { list-style: none; padding: 0; margin: 8px 0 0; display: grid; gap: 6px; color: var(--gray700); text-align: left; }
+.formules-list li { position: relative; padding-left: 16px; }
+.formules-list li::before { content: "•"; position: absolute; left: 0; top: 0; color: var(--gold); }
+/* Formules variation: black cards with white text */
+/* Unified dark deck */
+.formules .formules-deck { background: transparent; padding: 0; }
+.formules .formules-columns { display:grid; grid-template-columns: 1fr; gap: 14px; align-items: stretch; margin-top: 24px; }
+@media (min-width: 768px){ .formules .formules-columns{ grid-template-columns: repeat(3, 1fr); } }
+.formules .formule-col { color: var(--black); padding: 16px 16px; text-align: left; position: relative; display:flex; flex-direction: column; }
+@media (min-width: 768px){ .formules .formule-col + .formule-col { border-left: none; } }
+.formules .formule-col h3 { margin: 0 0 6px; font-family: var(--font-cormorant), serif; font-weight: 600; letter-spacing: .02em; text-align:center; font-size: clamp(18px, 2.2vw, 24px); background: linear-gradient(90deg, #C9A449, #A67C2D, #C9A449); -webkit-background-clip: text; background-clip: text; color: transparent; background-size: 200% 100%; animation: goldShimmer 6s ease-in-out infinite; }
+@keyframes goldShimmer { 0%{ background-position: 0% 50%; } 50%{ background-position: 100% 50%; } 100%{ background-position: 0% 50%; } }
+.plan-sub { margin: 0 0 10px; text-align:center; color: var(--gray700); font-size: 13px; }
+/* Section lead under heading */
+.formules .section-lead, .section-lead { color: var(--gray700); max-width: 780px; margin: 0 auto; font-size: 14px; line-height: 1.7; }
+.formules .formules-list { color: rgba(15,15,15,.9); text-align:left; font-size: 15px; line-height: 1.62; }
+.formules .formules-list li { padding-left: 22px; }
+.formules .formules-list li::before { content: "✓"; position:absolute; left: 0; top: 0.05em; color: #A67C2D; font-weight: 700; font-size: 12px; }
+.formules .formule-col--highlight { background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0)); border-radius: 10px; }
+.formules .formule-logo-wrap { display:grid; place-items:center; margin-bottom: 6px; }
+.formules .formule-logo { filter: drop-shadow(0 6px 14px rgba(0,0,0,.45)); }
+/* Gradient bordered pricing card style */
+.pricing-card { background: #fff; border: 1px solid rgba(0,0,0,.06); border-radius: var(--radius-lg); box-shadow: var(--shadow-soft); padding: 16px; display:flex; flex-direction: column; gap: 8px; height: 100%; transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease; }
+.pricing-card h3 { text-align: center; }
+/* plan-cta removed per request */
+.pricing-card:hover { transform: translateY(-2px); box-shadow: 0 16px 36px rgba(0,0,0,.18); }
+.pricing-card--featured { }
 .service-cta { width:24px; height:24px; border: 1px solid rgba(0,0,0,.18); border-radius: var(--radius-lg); margin: 10px auto 0; position: relative; background: #fff; display:block; transition: transform .15s ease, border-color .15s ease, background-color .15s ease; }
 .service-cta::after { content:""; position:absolute; left:8px; top:6px; width:6px; height:6px; border: 2px solid var(--gold); border-left-color: transparent; border-bottom-color: transparent; transform: rotate(45deg); border-radius:2px; }
 .service-card:hover .service-cta { transform: scale(1.06); border-color: var(--gold); background: rgba(201,164,73,.08); }
