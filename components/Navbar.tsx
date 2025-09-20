@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 const items = [
   { label: "Accueil", href: "#hero" },
   { label: "Nos Services", href: "#services" },
-  { label: "Nos Formules", href: "#formules" },
+  { label: "Nos Accompagnements", href: "#formules" },
   { label: "Pourquoi nous choisir", href: "#why" },
   { label: "Zones d'intervention", href: "#zones" },
 ];
