@@ -81,14 +81,14 @@ export default function Home() {
         <section id="formules" className="section formules">
           <div className="mx-auto max-w-6xl px-4">
             <div className="why-head text-center">
-              <div className="eyebrow">Nos Formules</div>
+              <div className="eyebrow">Nos Accompagnements</div>
               <h2 className="mb-2">Trois niveaux d’accompagnement</h2>
               <p className="section-lead">Des offres claires et progressives pour un accompagnement sur mesure — du diagnostic initial au suivi après l’acquisition.</p>
             </div>
             <div className="formules-deck">
               <div className="formules-columns">
                 <div className="formule-col pricing-card">
-                  <h3>Formule Essentielle</h3>
+                  <h3>Accompagnement Essentiel</h3>
                   <p className="plan-sub">Les bases pour démarrer sereinement.</p>
                   <ul className="formules-list">
                     <li>Diagnostic projet & conseils personnalisés</li>
@@ -97,7 +97,7 @@ export default function Home() {
                   </ul>
                 </div>
                 <div className="formule-col pricing-card">
-                  <h3>Formule Sérénité</h3>
+                  <h3>Accompagnement Sérénité</h3>
                   <p className="plan-sub">Accompagnement complet et clair, de A à Z.</p>
                   <ul className="formules-list">
                     <li>Diagnostic complet + simulation fiscale</li>
@@ -107,7 +107,7 @@ export default function Home() {
                   </ul>
                 </div>
                 <div className="formule-col pricing-card">
-                  <h3>Formule Premium</h3>
+                  <h3>Accompagnement Premium</h3>
                   <p className="plan-sub">Service haut de gamme et suivi continu.</p>
                   <ul className="formules-list">
                     <li>Tous les avantages de la Formule Sérénité</li>
