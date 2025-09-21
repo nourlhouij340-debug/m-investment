@@ -88,7 +88,7 @@ export default function Home() {
             <div className="formules-deck">
               <div className="formules-columns">
                 <div className="formule-col pricing-card">
-                  <h3>Accompagnement Essentiel</h3>
+                  <h3>Essentiel</h3>
                   <p className="plan-sub">Les bases pour démarrer sereinement.</p>
                   <ul className="formules-list">
                     <li>Diagnostic projet & conseils personnalisés</li>
@@ -97,7 +97,7 @@ export default function Home() {
                   </ul>
                 </div>
                 <div className="formule-col pricing-card">
-                  <h3>Accompagnement Sérénité</h3>
+                  <h3>Sérénité</h3>
                   <p className="plan-sub">Accompagnement complet et clair, de A à Z.</p>
                   <ul className="formules-list">
                     <li>Diagnostic complet + simulation fiscale</li>
@@ -107,7 +107,7 @@ export default function Home() {
                   </ul>
                 </div>
                 <div className="formule-col pricing-card">
-                  <h3>Accompagnement Premium</h3>
+                  <h3>Premium</h3>
                   <p className="plan-sub">Service haut de gamme et suivi continu.</p>
                   <ul className="formules-list">
                     <li>Tous les avantages de la Formule Sérénité</li>
@@ -126,7 +126,7 @@ export default function Home() {
           <div className="mx-auto max-w-6xl px-4">
             <div className="why-head text-center">
               <div className="eyebrow">Pourquoi nous choisir</div>
-              <h2 className="mb-2">Un accompagnement premium, discret et fiable</h2>
+              <h2 className="mb-2">Premium, discret et fiable</h2>
               <p className="prose text-[color:var(--gray700)] max-w-3xl mx-auto">Chez M-Investment nous guidons chacun de nos clients avec fiabilité, discrétion et de manière personnalisée, de la conception à la réalisation de son projet.</p>
             </div>
             <div className="why-grid">
