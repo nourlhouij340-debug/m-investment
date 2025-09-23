@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
 import { google } from "googleapis";
+import fs from "node:fs";
+import path from "node:path";
 
 // Ensure Node.js runtime (required for googleapis)
 export const runtime = "nodejs";
@@ -30,6 +32,22 @@ function normalizePrivateKey(raw?: string): string | undefined {
   return key.includes("BEGIN PRIVATE KEY") ? key : undefined;
 }
 
+function getLocalCreds(): { email?: string; key?: string; id?: string } {
+  try {
+    const fp = path.join(process.cwd(), "sheets.local.json");
+    if (!fs.existsSync(fp)) return {};
+    const raw = fs.readFileSync(fp, "utf8");
+    const j = JSON.parse(raw);
+    return {
+      email: typeof j?.clientEmail === "string" ? j.clientEmail : j?.email,
+      key: normalizePrivateKey(typeof j?.privateKey === "string" ? j.privateKey : j?.key),
+      id: typeof j?.sheetId === "string" ? j.sheetId : (typeof j?.spreadsheetId === "string" ? j.spreadsheetId : undefined),
+    };
+  } catch {
+    return {};
+  }
+}
+
 export async function POST(req: Request) {
   try {
     const body = await req.json().catch(() => ({}));
@@ -49,9 +67,17 @@ export async function POST(req: Request) {
       return NextResponse.json({ ok: false, error: "invalid_fields" }, { status: 400 });
     }
 
-    const clientEmail = getEnv("GOOGLE_CLIENT_EMAIL");
-    const privateKey = normalizePrivateKey(getEnv("GOOGLE_PRIVATE_KEY"));
-    const spreadsheetId = getEnv("SHEETS_ID") || getEnv("GOOGLE_SHEET_ID") || getEnv("GOOGLE_SHEETS_ID");
+    let clientEmail = getEnv("GOOGLE_CLIENT_EMAIL");
+    let privateKey = normalizePrivateKey(getEnv("GOOGLE_PRIVATE_KEY"));
+    let spreadsheetId = getEnv("SHEETS_ID") || getEnv("GOOGLE_SHEET_ID") || getEnv("GOOGLE_SHEETS_ID");
+
+    // Dev-only fallback to sheets.local.json if envs are missing
+    if (!clientEmail || !privateKey || !spreadsheetId) {
+      const local = getLocalCreds();
+      clientEmail = clientEmail || local.email;
+      privateKey = privateKey || local.key;
+      spreadsheetId = spreadsheetId || local.id;
+    }
 
     if (!clientEmail) {
       return NextResponse.json({ ok: false, error: "missing GOOGLE_CLIENT_EMAIL" }, { status: 500 });

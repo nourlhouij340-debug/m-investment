@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Local Sheets creds fallback (do not commit secrets)
+sheets.local.json
