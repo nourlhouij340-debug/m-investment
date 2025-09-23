@@ -7,9 +7,9 @@ import ZoneCard from "@/components/ZoneCard";
 import ServiceCard from "@/components/ServiceCard";
 import ServiceTile from "@/components/ServiceTile";
 import ContactForm from "@/components/ContactForm";
+import BrochureLeadSection from "@/components/BrochureLeadSection";
 import HeroCtas from "@/components/HeroCtas";
 import QuoteSection from "@/components/QuoteSection";
-import BrochureLeadSection from "@/components/marketing/BrochureLeadSection";
 
 export default function Home() {
   return (
@@ -122,7 +122,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Brochure Lead Section */}
+        {/* Brochure lead section (gated) */}
         <BrochureLeadSection />
 
         {/* Why (premium) */}
