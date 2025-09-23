@@ -1,42 +1,59 @@
 import { NextRequest } from 'next/server';
+import { google } from 'googleapis';
 
 export async function POST(req: NextRequest) {
   try {
     const payload = await req.json();
 
-    // If honeypot accidentally passed through, strip it server-side too
+    // Honeypot: if filled, accept but skip writing
     if (payload && typeof payload.website === 'string' && payload.website.trim().length > 0) {
       return new Response(JSON.stringify({ ok: true, skipped: true }), { status: 200 });
     }
 
-    const base = process.env.NEXT_PUBLIC_GAS_WEBHOOK_URL;
-    const key = process.env.NEXT_PUBLIC_GAS_SECRET;
-    if (!base || !key) {
-      // Accept but skip external forwarding if not configured yet
-      return new Response(JSON.stringify({ ok: true, configured: false }), { status: 200 });
+    const clientEmail = process.env.GOOGLE_CLIENT_EMAIL;
+    const privateKeyRaw = process.env.GOOGLE_PRIVATE_KEY;
+    const spreadsheetId = process.env.GOOGLE_SHEET_ID;
+    const tabName = process.env.GOOGLE_SHEET_TAB || 'Leads';
+
+    if (!clientEmail || !privateKeyRaw || !spreadsheetId) {
+      return new Response(
+        JSON.stringify({ ok: false, error: 'Sheets credentials not configured' }),
+        { status: 500 }
+      );
     }
 
-    const res = await fetch(`${base}?key=${key}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload),
-      // Prevent this from failing the edge due to long timeouts
-      cache: 'no-store',
+    // Handle escaped newlines from env
+    const privateKey = privateKeyRaw.replace(/\\n/g, '\n');
+
+    const auth = new google.auth.JWT({
+      email: clientEmail,
+      key: privateKey,
+      scopes: ['https://www.googleapis.com/auth/spreadsheets'],
     });
 
-    let ok = res.ok;
-    try {
-      const data = await res.json();
-      if (typeof data?.ok === 'boolean') ok = ok && data.ok;
-    } catch {
-      // ignore JSON errors
-    }
+    const sheets = google.sheets({ version: 'v4', auth });
 
-    return new Response(JSON.stringify({ ok }), { status: ok ? 200 : 500 });
+    const prenom = String(payload?.prenom || '').trim();
+    const nom = String(payload?.nom || '').trim();
+    const email = String(payload?.email || '').trim();
+    const telephone = String(payload?.telephone || payload?.tel || '').trim();
+    const timestamp = new Date().toISOString();
+
+    // Append only the requested columns: Timestamp, Prénom, Nom, Email, Téléphone
+    await sheets.spreadsheets.values.append({
+      spreadsheetId,
+      range: `${tabName}!A:E`,
+      valueInputOption: 'USER_ENTERED',
+      insertDataOption: 'INSERT_ROWS',
+      requestBody: {
+        values: [[timestamp, prenom, nom, email, telephone]],
+      },
+    });
+
+    return new Response(JSON.stringify({ ok: true }), { status: 200 });
   } catch (e) {
+    console.error('Error writing to Google Sheets:', e);
     return new Response(JSON.stringify({ ok: false }), { status: 500 });
   }
 }
-
-
 
