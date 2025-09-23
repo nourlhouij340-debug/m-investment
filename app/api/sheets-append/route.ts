@@ -1,10 +1,19 @@
 import { NextResponse } from "next/server";
 import { google } from "googleapis";
 
+// Ensure Node.js runtime (required for googleapis)
+export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
+
 function getEnv(name: string): string | undefined {
-  const v = process.env[name];
-  if (v && typeof v === "string" && v.trim().length > 0) return v;
-  return undefined;
+  const raw = process.env[name];
+  if (!raw || typeof raw !== "string") return undefined;
+  let v = raw.trim();
+  // Strip surrounding quotes if present
+  if ((v.startsWith('"') && v.endsWith('"')) || (v.startsWith("'") && v.endsWith("'"))) {
+    v = v.slice(1, -1).trim();
+  }
+  return v.length > 0 ? v : undefined;
 }
 
 function normalizePrivateKey(raw?: string): string | undefined {
@@ -73,6 +82,24 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: true });
   } catch (err: any) {
     return NextResponse.json({ ok: false, error: String(err?.message || err) }, { status: 500 });
+  }
+}
+
+export async function GET() {
+  try {
+    const clientEmail = getEnv("GOOGLE_CLIENT_EMAIL");
+    const privateKey = normalizePrivateKey(getEnv("GOOGLE_PRIVATE_KEY"));
+    const spreadsheetId = getEnv("SHEETS_ID") || getEnv("GOOGLE_SHEET_ID") || getEnv("GOOGLE_SHEETS_ID");
+
+    return NextResponse.json({
+      ok: true,
+      hasClientEmail: !!clientEmail,
+      hasPrivateKey: !!privateKey,
+      hasSheetId: !!spreadsheetId,
+      clientEmailSuffix: clientEmail ? clientEmail.slice(-22) : null,
+    }, { headers: { "Cache-Control": "no-store" } });
+  } catch (e: any) {
+    return NextResponse.json({ ok: false, error: String(e?.message || e) }, { status: 500 });
   }
 }
 
