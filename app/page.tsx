@@ -9,6 +9,7 @@ import ServiceTile from "@/components/ServiceTile";
 import ContactForm from "@/components/ContactForm";
 import HeroCtas from "@/components/HeroCtas";
 import QuoteSection from "@/components/QuoteSection";
+import BrochureLeadSection from "@/components/marketing/BrochureLeadSection";
 
 export default function Home() {
   return (
@@ -120,6 +121,9 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* Brochure Lead Section */}
+        <BrochureLeadSection />
 
         {/* Why (premium) */}
         <section id="why" className="why-premium section">
