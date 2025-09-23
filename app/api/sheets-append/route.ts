@@ -97,6 +97,48 @@ export async function POST(req: Request) {
     await auth.authorize();
     const sheets = google.sheets({ version: "v4", auth });
 
+    // Ensure target sheet "Leads" exists; if not, create it and set headers
+    try {
+      const meta = await sheets.spreadsheets.get({
+        spreadsheetId,
+        fields: "sheets.properties",
+      });
+      const hasLeads = (meta.data.sheets || []).some(
+        s => s?.properties?.title === "Leads"
+      );
+      if (!hasLeads) {
+        await sheets.spreadsheets.batchUpdate({
+          spreadsheetId,
+          requestBody: {
+            requests: [
+              {
+                addSheet: {
+                  properties: { title: "Leads" },
+                },
+              },
+            ],
+          },
+        });
+        // Add header row matching expected column order
+        await sheets.spreadsheets.values.update({
+          spreadsheetId,
+          range: "Leads!A1:E1",
+          valueInputOption: "RAW",
+          requestBody: {
+            values: [[
+              "Timestamp",
+              "Prénom",
+              "Nom",
+              "Téléphone",
+              "Email",
+            ]],
+          },
+        });
+      }
+    } catch (e) {
+      // If metadata fetch fails, continue; append may still work if range is valid
+    }
+
     const row = [new Date().toISOString(), prenom, nom, tel, email];
     await sheets.spreadsheets.values.append({
       spreadsheetId,
@@ -113,9 +155,44 @@ export async function POST(req: Request) {
 
 export async function GET() {
   try {
-    const clientEmail = getEnv("GOOGLE_CLIENT_EMAIL");
-    const privateKey = normalizePrivateKey(getEnv("GOOGLE_PRIVATE_KEY"));
-    const spreadsheetId = getEnv("SHEETS_ID") || getEnv("GOOGLE_SHEET_ID") || getEnv("GOOGLE_SHEETS_ID");
+    let clientEmail = getEnv("GOOGLE_CLIENT_EMAIL");
+    let privateKey = normalizePrivateKey(getEnv("GOOGLE_PRIVATE_KEY"));
+    let spreadsheetId = getEnv("SHEETS_ID") || getEnv("GOOGLE_SHEET_ID") || getEnv("GOOGLE_SHEETS_ID");
+
+    const hadEnvEmail = !!clientEmail;
+    const hadEnvKey = !!privateKey;
+    const hadEnvId = !!spreadsheetId;
+
+    if (!clientEmail || !privateKey || !spreadsheetId) {
+      const local = getLocalCreds();
+      clientEmail = clientEmail || local.email;
+      privateKey = privateKey || local.key;
+      spreadsheetId = spreadsheetId || local.id;
+    }
+
+    let meta: any = null;
+    let hasLeads = false;
+    let sheetTitles: string[] = [];
+    if (clientEmail && privateKey && spreadsheetId) {
+      try {
+        const auth = new google.auth.JWT({
+          email: clientEmail,
+          key: privateKey,
+          scopes: ["https://www.googleapis.com/auth/spreadsheets"],
+        });
+        await auth.authorize();
+        const sheets = google.sheets({ version: "v4", auth });
+        const resp = await sheets.spreadsheets.get({
+          spreadsheetId,
+          fields: "sheets.properties.title",
+        });
+        meta = resp.data;
+        sheetTitles = (meta?.sheets || []).map((s: any) => s?.properties?.title).filter(Boolean);
+        hasLeads = sheetTitles.includes("Leads");
+      } catch (e) {
+        // ignore diagnostics failure
+      }
+    }
 
     return NextResponse.json({
       ok: true,
@@ -123,6 +200,13 @@ export async function GET() {
       hasPrivateKey: !!privateKey,
       hasSheetId: !!spreadsheetId,
       clientEmailSuffix: clientEmail ? clientEmail.slice(-22) : null,
+      spreadsheetIdHint: spreadsheetId ? `${spreadsheetId.slice(0,4)}…${spreadsheetId.slice(-4)}` : null,
+      hasLeads,
+      sheetTitles,
+      source: {
+        fromEnv: { email: hadEnvEmail, key: hadEnvKey, id: hadEnvId },
+        usedLocalFallback: !hadEnvEmail || !hadEnvKey || !hadEnvId,
+      },
     }, { headers: { "Cache-Control": "no-store" } });
   } catch (e: any) {
     return NextResponse.json({ ok: false, error: String(e?.message || e) }, { status: 500 });

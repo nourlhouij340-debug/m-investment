@@ -124,10 +124,16 @@ export default function BrochureLeadSection() {
             )}
           </form>
         ) : (
-          <div className="contact-form contact-form--wide mx-auto mt-6 text-center" aria-live="polite">
+          <div
+            className="contact-form contact-form--wide mx-auto mt-6 text-center max-w-2xl"
+            style={{ textAlign: "center" }}
+            aria-live="polite"
+          >
             <h3 className="mb-1">Merci, votre demande a bien été enregistrée.</h3>
             <p className="text-[color:var(--gray700)] mb-3">Vous pouvez télécharger le guide maintenant.</p>
-            <a href="/brochures/guide-5-erreurs-achat-maroc.pdf" download className="btn btn--primary">Télécharger le PDF</a>
+            <div className="flex justify-center">
+              <a href="/brochures/Brochure.docx" download="Brochure.docx" className="btn btn--primary">Télécharger le guide</a>
+            </div>
           </div>
         )}
       </div>
