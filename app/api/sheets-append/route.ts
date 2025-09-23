@@ -54,12 +54,11 @@ export async function POST(req: Request) {
       return NextResponse.json({ ok: false, error: "missing SHEETS_ID/GOOGLE_SHEET_ID" }, { status: 500 });
     }
 
-    const auth = new google.auth.JWT(
-      clientEmail,
-      undefined,
-      privateKey,
-      ["https://www.googleapis.com/auth/spreadsheets"]
-    );
+    const auth = new google.auth.JWT({
+      email: clientEmail,
+      key: privateKey,
+      scopes: ["https://www.googleapis.com/auth/spreadsheets"],
+    });
     await auth.authorize();
     const sheets = google.sheets({ version: "v4", auth });
 
