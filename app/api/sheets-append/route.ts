@@ -67,9 +67,9 @@ export async function POST(req: Request) {
       return NextResponse.json({ ok: false, error: "invalid_fields" }, { status: 400 });
     }
 
-    let clientEmail = getEnv("GOOGLE_CLIENT_EMAIL");
-    let privateKey = normalizePrivateKey(getEnv("GOOGLE_PRIVATE_KEY"));
-    let spreadsheetId = getEnv("SHEETS_ID") || getEnv("GOOGLE_SHEET_ID") || getEnv("GOOGLE_SHEETS_ID");
+    let clientEmail = getEnv("clientEmail");
+    let privateKey = normalizePrivateKey(getEnv("privateKey"));
+    let spreadsheetId = getEnv("spreadsheetId") || getEnv("GOOGLE_SHEET_ID") || getEnv("GOOGLE_SHEETS_ID");
 
     // Dev-only fallback to sheets.local.json if envs are missing
     if (!clientEmail || !privateKey || !spreadsheetId) {
