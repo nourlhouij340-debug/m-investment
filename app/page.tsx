@@ -7,13 +7,12 @@ import ZoneCard from "@/components/ZoneCard";
 import ServiceCard from "@/components/ServiceCard";
 import ServiceTile from "@/components/ServiceTile";
 import ContactForm from "@/components/ContactForm";
-import BrochureLeadSection from "@/components/BrochureLeadSection";
 import HeroCtas from "@/components/HeroCtas";
 import QuoteSection from "@/components/QuoteSection";
 
 export default function Home() {
   return (
-    <div className="font-sans">
+    <div>
       <Navbar />
       <main>
         {/* Hero (clean, cream, left text, right image) */}
@@ -122,9 +121,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Brochure lead section (gated) */}
-        <BrochureLeadSection />
-
         {/* Why (premium) */}
         <section id="why" className="why-premium section">
           <div className="mx-auto max-w-6xl px-4">
@@ -151,7 +147,7 @@ export default function Home() {
               </div>
             </div>
             <div className="why-cta text-center">
-              <a href="#contact" className="btn btn--primary">Parler de votre projet</a>
+              <a href="#contact" className="btn-primary">Parler de votre projet</a>
             </div>
           </div>
           <div className="why-glow" aria-hidden="true" />
@@ -207,7 +203,7 @@ export default function Home() {
 
             {/* Row 2: keep only CTA button */}
             <div className="about-plain about-center about-animate delay-1">
-              <a href="#contact" className="btn btn--primary">Discuter de votre projet</a>
+              <a href="#contact" className="btn-primary btn-spotlight">Discuter de votre projet</a>
             </div>
           </div>
         </section>
@@ -249,7 +245,7 @@ export default function Home() {
               M-Investment, cabinet spécialisé dans l’accompagnement des investissements au Maroc : conseil stratégique, sécurisation juridique, solutions financières et gestion post-achat, pour faire croître et protéger durablement votre patrimoine.
             </p>
           </div>
-          <div>
+          <div className="footer-col">
             <h3 className="footer-head">Nos liens</h3>
             <ul className="footer-links">
               <li><a href="#why" className="underline-link">Pourquoi nous choisir</a></li>
@@ -259,7 +255,7 @@ export default function Home() {
               <li><a href="#about" className="underline-link">À propos</a></li>
             </ul>
           </div>
-          <div>
+          <div className="footer-col">
             <h3 className="footer-head">Contact</h3>
             <ul className="footer-contact">
               <li><a href="tel:+212600000000" className="underline-link">+212 6 00 00 00 00</a></li>
@@ -268,9 +264,9 @@ export default function Home() {
             </ul>
           </div>
         </div>
-        <div className="footer-bottom mx-auto max-w-6xl px-4 py-6 text-[color:var(--gray600)] text-sm flex items-center justify-between gap-4">
-          <span>© {new Date().getFullYear()} M‑Investment — Tous droits réservés</span>
-          <a href="https://www.creaeshop.ma" target="_blank" rel="noopener noreferrer" className="made subtle underline-link">Site par CreaEshop Agency</a>
+        <div className="footer-bottom mx-auto max-w-6xl px-4 py-6 text-[color:var(--gray600)] text-sm grid grid-cols-1 md:grid-cols-2 items-center gap-2">
+          <span className="order-2 md:order-1">© {new Date().getFullYear()} M‑Investment — Tous droits réservés</span>
+          <a href="https://www.creaeshop.ma" target="_blank" rel="noopener noreferrer" className="made subtle underline-link order-1 md:order-2 md:justify-self-end">Site par CreaEshop Agency</a>
         </div>
       </footer>
 

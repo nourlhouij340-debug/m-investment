@@ -60,7 +60,7 @@ export default function ContactForm() {
         {errors.message ? <p className="text-red-600 text-sm mt-1" role="alert">{errors.message}</p> : null}
       </div>
       <div className="contact-actions">
-        <button type="submit" className="btn btn--primary">Envoyer</button>
+        <button type="submit" className="btn-primary">Envoyer</button>
       </div>
       <div className="text-center">
         {status === "success" && <span className="text-green-700 text-sm">Message envoyé. Nous vous répondrons rapidement.</span>}
