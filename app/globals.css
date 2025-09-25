@@ -20,14 +20,16 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* Lock light theme regardless of OS/browser dark mode */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: var(--cream);
+    --foreground: var(--black);
   }
 }
 
-body {
+html { color-scheme: light; }
+html, body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-cormorant), serif;
