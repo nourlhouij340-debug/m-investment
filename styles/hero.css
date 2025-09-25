@@ -441,6 +441,10 @@
 .contact-premium { background: transparent; }
 .contact-head h2 { font-family: var(--font-cormorant), serif; }
 .contact-form { background:#fff; border-radius: var(--radius-lg); box-shadow: var(--shadow-soft); padding: 24px; text-align: left; }
+/* Brochure section */
+.brochure-section { background: transparent; }
+.brochure-panel { background:#fff; border-radius: var(--radius-lg); box-shadow: var(--shadow-soft); padding: 24px; }
+.brochure-btn { min-width: 260px; }
 .contact-form--wide { max-width: 920px; }
 .contact-actions { display:flex; justify-content:center; margin-top: 14px; }
 .contact-form button, .contact-form .btn { border-radius: var(--radius-lg); padding: 12px 24px; font-size: 16px; }
