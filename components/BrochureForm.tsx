@@ -46,9 +46,9 @@ export default function BrochureForm() {
     <section id="brochure" className="section brochure-section">
       <div className="mx-auto max-w-6xl px-4">
         <div className="text-center mb-6">
-          <div className="eyebrow">Téléchargez notre brochure détaillée</div>
+          <div className="eyebrow">Téléchargez notre brochure 5 pièges à éviter</div>
           <h2>Recevez notre brochure complète</h2>
-          <p className="prose max-w-3xl mx-auto">Remplissez le formulaire pour recevoir notre brochure complète : process d’accompagnement, options de financement, cadre juridique et prestations post‑achat.</p>
+          <p className="prose max-w-3xl mx-auto">Remplissez le formulaire pour recevoir notre brochure : 5 pièges à éviter lors d'un achat d'un bien immobilier au Maroc. </p>
         </div>
         {status !== "success" ? (
           <div className="brochure-panel">
