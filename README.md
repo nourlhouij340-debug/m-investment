@@ -1,6 +1,6 @@
-## M-Investment – One-page premium site
+## Haven Bridge – One-page premium site
 
-Single-page site for M-Investment (conseil & accompagnement immobilier, sécurisation juridique, gestion post-achat).
+Single-page site for Haven Bridge (conseil & accompagnement immobilier, sécurisation juridique, gestion post-achat).
 
 ### Run locally
 

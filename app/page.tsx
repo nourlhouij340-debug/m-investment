@@ -20,7 +20,7 @@ export default function Home() {
         <section id="hero" className="hero-premium">
           <Image src="/assets/icons/hero.jpg" alt="Arrière‑plan héro" fill className="hero-bg-img" priority sizes="100vw" />
           <div className="content">
-            <h1 className="text-balance text-[clamp(28px,4vw,44px)] font-medium leading-[1.15]">Développez et optimisez vos investissements au Maroc avec M-Investment</h1>
+            <h1 className="text-balance text-[clamp(28px,4vw,44px)] font-medium leading-[1.15]">Développez et optimisez vos investissements au Maroc avec Haven Bridge</h1>
             <p className="mt-3 text-[clamp(15px,1.4vw,17px)] opacity-90">Un accompagnement sécurisé et sur mesure, couvrant chaque étape : étude et accompagnement financier auprès des établissements bancaires, acquisition, formalités administratives et suivi après l’achat.</p>
             <div className="mt-6 flex items-center justify-center gap-4 flex-wrap">
               <a href="#services" className="btn-primary btn-spotlight nav-cta">Découvrir nos services</a>
@@ -131,7 +131,7 @@ export default function Home() {
             <div className="why-head text-center">
               <div className="eyebrow">Pourquoi nous choisir</div>
               <h2 className="mb-2">Premium, discret et fiable</h2>
-              <p className="prose text-[color:var(--gray700)] max-w-3xl mx-auto">Chez M-Investment nous guidons chacun de nos clients avec fiabilité, discrétion et de manière personnalisée, de la conception à la réalisation de son projet.</p>
+              <p className="prose text-[color:var(--gray700)] max-w-3xl mx-auto">Chez Haven Bridge nous guidons chacun de nos clients avec fiabilité, discrétion et de manière personnalisée, de la conception à la réalisation de son projet.</p>
             </div>
             <div className="why-grid">
               <div className="why-card text-center">
@@ -242,11 +242,11 @@ export default function Home() {
       <footer className="footer-premium">
         <div className="mx-auto max-w-6xl px-4 py-12 grid gap-10 md:grid-cols-3 items-start footer-grid">
           <div className="footer-brand">
-            <a href="#hero" aria-label="M-Investment">
-              <Image src="/assets/icons/full-logocropped.png" alt="M‑Investment" width={150} height={48} />
+            <a href="#hero" aria-label="Haven Bridge" className="inline-flex items-center">
+              <Image src="/assets/icons/logooo.png" alt="M‑Investment" width={170} height={52} className="object-contain" />
             </a>
             <p className="mt-4 text-[color:var(--gray700)]">
-              M-Investment, cabinet spécialisé dans l’accompagnement des investissements au Maroc : conseil stratégique, sécurisation juridique, solutions financières et gestion post-achat, pour faire croître et protéger durablement votre patrimoine.
+              Haven Bridge, cabinet spécialisé dans l’accompagnement des investissements au Maroc : conseil stratégique, sécurisation juridique, solutions financières et gestion post-achat, pour faire croître et protéger durablement votre patrimoine.
             </p>
           </div>
           <div className="footer-col">
@@ -269,7 +269,7 @@ export default function Home() {
           </div>
         </div>
         <div className="footer-bottom mx-auto max-w-6xl px-4 py-6 text-[color:var(--gray600)] text-sm grid grid-cols-1 md:grid-cols-2 items-center gap-2">
-          <span className="order-2 md:order-1">© {new Date().getFullYear()} M‑Investment — Tous droits réservés</span>
+          <span className="order-2 md:order-1">© {new Date().getFullYear()} Haven Bridge — Tous droits réservés</span>
           <a href="https://www.creaeshop.ma" target="_blank" rel="noopener noreferrer" className="made subtle underline-link order-1 md:order-2 md:justify-self-end">Site par CreaEshop Agency</a>
         </div>
       </footer>

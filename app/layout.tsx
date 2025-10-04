@@ -11,7 +11,7 @@ const cormorant = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "M-Investment — L’excellence au service de votre patrimoine au Maroc",
+  title: "Haven Bridge — L’excellence au service de votre patrimoine au Maroc",
   description:
     "Cabinet d’accompagnement immobilier au Maroc : conseil, sécurisation juridique & administrative, et services post-achat.",
   metadataBase: new URL("https://example.com"),
@@ -26,19 +26,19 @@ export const metadata: Metadata = {
     shortcut: "/assets/icons/logotouse.png",
   },
   openGraph: {
-    title: "M-Investment",
+    title: "Haven Bridge",
     description:
       "Votre partenaire de confiance pour investir et vous installer au Maroc.",
     url: "https://example.com",
-    siteName: "M-Investment",
+    siteName: "Haven Bridge",
     type: "website",
     images: [
-      { url: "/assets/og-image.jpg", width: 1200, height: 630, alt: "M-Investment" },
+      { url: "/assets/og-image.jpg", width: 1200, height: 630, alt: "Haven Bridge" },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "M-Investment",
+    title: "Haven Bridge",
     description:
       "Votre partenaire de confiance pour investir et vous installer au Maroc.",
   },

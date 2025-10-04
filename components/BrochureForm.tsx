@@ -65,7 +65,7 @@ export default function BrochureForm() {
   const triggerDownload = () => {
     const a = document.createElement("a");
     a.href = "/assets/Brochure.pdf";
-    a.download = "Brochure_M-Investment.pdf";
+    a.download = "Brochure_Haven-Bridge.pdf";
     document.body.appendChild(a);
     a.click();
     a.remove();

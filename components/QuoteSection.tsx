@@ -33,11 +33,11 @@ export default function QuoteSection() {
     <div ref={wrapRef} className="quote-wrap relative z-[2]">
       <div className="quote-header relative z-[3]">
         <Image
-          src="/assets/icons/logotouse.png"
-          alt="M-Investment"
+          src="/assets/icons/bridgerton.png"
+          alt="Haven Bridge"
           width={84}
           height={84}
-          className="quote-logo"
+          className="quote-logo mix-blend-multiply object-contain"
           priority
         />
       </div>
@@ -57,7 +57,7 @@ export default function QuoteSection() {
       <blockquote className="quote-premium relative z-[3]">
         <span className="quote-mark">“</span>
         <p className="quote-text">
-          Chez M-Investment, nous savons qu’investir au Maroc ne se limite pas à acheter un bien : c’est créer de la valeur, préparer l’avenir et réussir votre installation. C’est pourquoi nous vous accompagnons à chaque étape clé avec rigueur et transparence, du financement à la sécurisation juridique et gestion post-acquisition.
+          Chez Haven Bridge, nous savons qu’investir au Maroc ne se limite pas à acheter un bien : c’est créer de la valeur, préparer l’avenir et réussir votre installation. C’est pourquoi nous vous accompagnons à chaque étape clé avec rigueur et transparence, du financement à la sécurisation juridique et gestion post-acquisition.
         </p>
         <span className="quote-mark end">”</span>
       </blockquote>

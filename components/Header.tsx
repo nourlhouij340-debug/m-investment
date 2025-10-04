@@ -33,7 +33,7 @@ export default function Header() {
     <header className={`fixed inset-x-0 top-0 z-50 transition-shadow duration-200 ${solid ? "bg-white/95 shadow-md backdrop-blur" : "bg-transparent"}`}>
       <nav className="mx-auto max-w-6xl px-4 h-16 flex items-center justify-between" aria-label="Navigation principale">
         <a href="#hero" className="flex items-center gap-2" onClick={(e) => handleClick(e, "#hero")}>
-          <Image src="/assets/logo.svg" width={120} height={30} alt="M-Investment" />
+          <Image src="/assets/logo.svg" width={120} height={30} alt="Haven Bridge" />
         </a>
         <ul className="hidden md:flex items-center gap-6">
           {links.map((l) => (

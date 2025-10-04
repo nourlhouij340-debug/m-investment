@@ -35,7 +35,7 @@ export default function Navbar() {
       <nav className="mx-auto max-w-6xl px-4 h-16 flex items-center justify-between md:grid md:grid-cols-[auto_1fr_auto]" aria-label="Navigation principale">
         <div className="flex items-center gap-4">
           <a href="#hero" onClick={(e) => handle(e, "#hero")} className="flex items-center gap-2">
-            <Image src="/assets/icons/logotouse.png" alt="M-Investment" width={52} height={52} />
+            <Image src="/assets/icons/bridgerton.png" alt="Haven Bridge" width={52} height={52} className="object-contain mix-blend-multiply" />
           </a>
         </div>
         <ul className="hidden md:flex items-center justify-center gap-5 text-[0.95rem]">
