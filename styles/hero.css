@@ -116,13 +116,19 @@
 /* Premium photo hero (full-bleed under navbar) */
 .hero-premium {
   position: relative;
-  margin-top: -96px; /* adjust to match taller navbar height (h-24) */
+  margin-top: -80px; /* base offset for mobile */
   min-height: 82vh;
   display: grid;
   place-items: center;
   text-align: center;
   padding: 80px 16px 56px;
   color: #fff;
+}
+@media (min-width: 640px){
+  .hero-premium { margin-top: -88px; }
+}
+@media (min-width: 768px){
+  .hero-premium { margin-top: -96px; }
 }
 .hero-premium::before {
   content: "";

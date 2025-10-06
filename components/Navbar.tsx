@@ -32,7 +32,7 @@ export default function Navbar() {
 
   return (
     <header className={`w-full pt-0 pb-0 z-50 absolute md:sticky top-0 bg-[color:var(--cream)]/85 md:bg-transparent ${scrolled ? "md:bg-[color:var(--cream)]/85 md:backdrop-blur" : ""}`}>
-      <nav className="mx-auto max-w-6xl px-4 h-24 flex items-center justify-between md:grid md:grid-cols-[auto_1fr_auto]" aria-label="Navigation principale">
+      <nav className="mx-auto max-w-6xl px-4 h-20 sm:h-22 md:h-24 flex items-center justify-between md:grid md:grid-cols-[auto_1fr_auto]" aria-label="Navigation principale">
         <div className="flex items-center gap-4 relative mt-[6px] ml-[-6px]">
           {/* stronger white glow behind logo */}
           <div
@@ -46,7 +46,7 @@ export default function Navbar() {
               alt="M-Investment logo"
               width={520}
               height={180}
-              className="object-contain h-[68px] md:h-[82px] lg:h-[92px] w-auto"
+              className="object-contain h-[54px] sm:h-[62px] md:h-[82px] lg:h-[92px] w-auto"
             />
           </a>
         </div>
