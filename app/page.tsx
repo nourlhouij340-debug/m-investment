@@ -241,8 +241,8 @@ export default function Home() {
 
       <footer className="footer-premium">
         <div className="mx-auto max-w-6xl px-4 py-12 grid gap-10 md:grid-cols-3 items-start footer-grid">
-          <div className="footer-brand">
-            <a href="#hero" aria-label="Haven Bridge" className="inline-flex items-center">
+          <div className="footer-brand text-center">
+            <a href="#hero" aria-label="Haven Bridge" className="inline-flex items-center justify-center mx-auto">
               <Image src="/assets/icons/logooo.png" alt="M‑Investment" width={170} height={52} className="object-contain" />
             </a>
             <p className="mt-4 text-[color:var(--gray700)]">

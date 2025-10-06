@@ -32,10 +32,22 @@ export default function Navbar() {
 
   return (
     <header className={`w-full pt-0 pb-0 z-50 absolute md:sticky top-0 bg-[color:var(--cream)]/85 md:bg-transparent ${scrolled ? "md:bg-[color:var(--cream)]/85 md:backdrop-blur" : ""}`}>
-      <nav className="mx-auto max-w-6xl px-4 h-16 flex items-center justify-between md:grid md:grid-cols-[auto_1fr_auto]" aria-label="Navigation principale">
-        <div className="flex items-center gap-4">
+      <nav className="mx-auto max-w-6xl px-4 h-24 flex items-center justify-between md:grid md:grid-cols-[auto_1fr_auto]" aria-label="Navigation principale">
+        <div className="flex items-center gap-4 relative mt-[6px] ml-[-6px]">
+          {/* stronger white glow behind logo */}
+          <div
+            className="pointer-events-none absolute -inset-2 left-0 top-1/2 -translate-y-1/2 w-[180px] md:w-[220px] h-[84px] md:h-[98px] blur-xl opacity-65"
+            style={{ background: "radial-gradient(70% 65% at 35% 50%, rgba(201,164,73,0.55), rgba(201,164,73,0) 78%)" }}
+            aria-hidden="true"
+          />
           <a href="#hero" onClick={(e) => handle(e, "#hero")} className="flex items-center gap-2">
-            <Image src="/assets/icons/bridgerton.png" alt="Haven Bridge" width={52} height={52} className="object-contain mix-blend-multiply" />
+            <Image
+              src="/assets/icons/logooo.png"
+              alt="M-Investment logo"
+              width={520}
+              height={180}
+              className="object-contain h-[68px] md:h-[82px] lg:h-[92px] w-auto"
+            />
           </a>
         </div>
         <ul className="hidden md:flex items-center justify-center gap-5 text-[0.95rem]">
