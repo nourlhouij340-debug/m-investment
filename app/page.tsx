@@ -19,7 +19,7 @@ export default function Home() {
         {/* Hero (clean, cream, left text, right image) */}
         <section id="hero" className="hero-premium">
           <Image src="/assets/icons/hero.jpg" alt="Arrière‑plan héro" fill className="hero-bg-img" priority sizes="100vw" />
-          <div className="content">
+          <div className="content pt-2 sm:pt-0">
             <h1 className="text-balance text-[clamp(28px,4vw,44px)] font-medium leading-[1.15]">Développez et optimisez vos investissements au Maroc avec Haven Bridge</h1>
             <p className="mt-3 text-[clamp(15px,1.4vw,17px)] opacity-90">Un accompagnement sécurisé et sur mesure, couvrant chaque étape : étude et accompagnement financier auprès des établissements bancaires, acquisition, formalités administratives et suivi après l’achat.</p>
             <div className="mt-6 flex items-center justify-center gap-4 flex-wrap">
