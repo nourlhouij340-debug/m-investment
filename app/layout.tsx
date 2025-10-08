@@ -18,12 +18,12 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://example.com" },
   icons: {
     icon: [
-      { url: "/assets/icons/logotouse.png", sizes: "32x32", type: "image/png" },
-      { url: "/assets/icons/logotouse.png", sizes: "48x48", type: "image/png" },
-      { url: "/assets/icons/logotouse.png", sizes: "64x64", type: "image/png" },
+      { url: "/assets/icons/bridgerton.png", sizes: "32x32", type: "image/png" },
+      { url: "/assets/icons/bridgerton.png", sizes: "48x48", type: "image/png" },
+      { url: "/assets/icons/bridgerton.png", sizes: "64x64", type: "image/png" },
     ],
-    apple: [{ url: "/assets/icons/logotouse.png", sizes: "180x180", type: "image/png" }],
-    shortcut: "/assets/icons/logotouse.png",
+    apple: [{ url: "/assets/icons/bridgerton.png", sizes: "180x180", type: "image/png" }],
+    shortcut: "/assets/icons/bridgerton.png",
   },
   openGraph: {
     title: "Haven Bridge",
