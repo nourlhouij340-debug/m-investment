@@ -212,6 +212,30 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Engagement */}
+        <section id="engagement" className="w-full bg-[#F8F5F2] py-20">
+          <div className="max-w-6xl mx-auto px-4 text-center">
+            <h2 className="text-3xl font-semibold mb-6">Notre engagement humain</h2>
+            <p className="max-w-3xl mx-auto mb-4">
+              Chez <span className="font-medium">Havenbridge Morocco by El Alami Capital</span>, nous croyons qu’une réussite n’a de sens que si elle profite aussi aux autres.
+            </p>
+            <p className="max-w-3xl mx-auto">
+              C’est pourquoi <span className="font-semibold">10 % de nos bénéfices</span> sont reversés à des œuvres caritatives soutenant les enfants orphelins : leur offrir éducation, accompagnement et espoir d’un avenir meilleur.
+            </p>
+            <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="bg-white border border-gray-200 rounded-xl p-5">
+                💛 <p className="mt-2 font-medium">Transmettre la force, inspirer l’avenir.</p>
+              </div>
+              <div className="bg-white border border-gray-200 rounded-xl p-5">
+                🌍 <p className="mt-2 font-medium">Agir localement, impacter durablement.</p>
+              </div>
+              <div className="bg-white border border-gray-200 rounded-xl p-5">
+                🤝 <p className="mt-2 font-medium">Rendre le métier accessible.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* CTA – full-bleed scrollable image with white ghost arrow */}
         <section id="cta" className="cta-hero">
           <div className="cta-inner">

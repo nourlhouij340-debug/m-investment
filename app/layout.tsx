@@ -3,19 +3,19 @@ import { Playfair_Display } from "next/font/google";
 import "./globals.css";
 import "../styles/hero.css";
 
-const cormorant = Playfair_Display({
-  variable: "--font-cormorant",
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
   subsets: ["latin"],
-  weight: ["400","500","600","700"],
-  style: ["normal","italic"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
   title: "Haven Bridge — L’excellence au service de votre patrimoine au Maroc",
   description:
     "Cabinet d’accompagnement immobilier au Maroc : conseil, sécurisation juridique & administrative, et services post-achat.",
-  metadataBase: new URL("https://example.com"),
-  alternates: { canonical: "https://example.com" },
+  metadataBase: new URL("https://m-investment.ma"),
+  alternates: { canonical: "/" },
   icons: {
     icon: [
       { url: "/assets/icons/bridgerton.png", sizes: "32x32", type: "image/png" },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: "Haven Bridge",
     description:
       "Votre partenaire de confiance pour investir et vous installer au Maroc.",
-    url: "https://example.com",
+    url: "https://m-investment.ma",
     siteName: "Haven Bridge",
     type: "website",
     images: [
@@ -59,9 +59,9 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        {/* Viewport handled by export const viewport */}
       </head>
-      <body className={`${cormorant.variable} antialiased`} style={{ WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}>
+      <body className={`${playfair.variable} antialiased`} style={{ WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}>
         {children}
       </body>
     </html>
